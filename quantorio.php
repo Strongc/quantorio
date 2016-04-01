@@ -2,7 +2,7 @@
 
 require 'Generator.php';
 
-$target = 'public';
+$target = '.';
 
 if (class_exists('lua')) {
 
