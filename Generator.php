@@ -58,6 +58,9 @@ class FactorioGenerator
 
     public function addMod($path)
     {
+        if(!is_file("{$path}/info.json")) {
+            return;
+        }
         $info = json_decode(file_get_contents("{$path}/info.json"));
         $info->_path = $path;
         $this->info[$info->name] = $info;
@@ -137,7 +140,7 @@ class FactorioGenerator
 
     public function convertPath($path, $is_source)
     {
-        return preg_replace_callback('~__([^_]+?)__~', function ($matches) use ($is_source) {
+        return preg_replace_callback('~__(.+?)__~', function ($matches) use ($is_source) {
             if (isset($this->info[$matches[1]])) {
                 if ($is_source) {
                     return $this->info[$matches[1]]->_path;
@@ -169,15 +172,13 @@ class FactorioGenerator
 
     public function saveItem($entity)
     {
-        if (!isset($entity['icon']) || !isset($entity['order'])) {
-            return;
+        if(!isset($this->items[$entity['name']]['order']) || !$this->items[$entity['name']]['order']) {
+            $this->items[$entity['name']]['order'] = preg_replace('~\[.*?\]~', '', isset($entity['order']) ? $entity['order'] : '');
         }
-        $item = [
-            'order' => preg_replace('~\[.*?\]~', '', $entity['order']),
-            'icon' => $this->saveIcon($entity['icon']),
-        ];
+        if(!isset($this->items[$entity['name']]['icon']) || !$this->items[$entity['name']]['icon']) {
+            $this->items[$entity['name']]['icon'] = isset($entity['icon']) ? $entity['icon'] : '';
+        }
 
-        $this->items[$entity['name']] = $item;
     }
 
     public function saveResource($entity)
@@ -208,13 +209,24 @@ class FactorioGenerator
                 $recipe['ingredients'][$ingredient[$this->firstSub]] = $ingredient[$this->firstSub + 1];
             }
         }
+
         $recipe['ingredient_count'] = count($recipe['ingredients']);
         if (isset($recipe['results']) && count($recipe['results']) == 1) {
-            $recipe['result_count'] = $recipe['results'][$this->firstSub]['amount'];
-            $recipe['type'] = $recipe['results'][$this->firstSub]['type'];
+            $recipe['result_count'] = isset($recipe['results'][$this->firstSub]['amount']) ? $recipe['results'][$this->firstSub]['amount'] : 1;
+            $recipe['type'] = isset($recipe['results'][$this->firstSub]['type']) ? $recipe['results'][$this->firstSub]['type'] : 'item';
+            $name = isset($recipe['results'][$this->firstSub]['name']) ? $recipe['results'][$this->firstSub]['name'] : $entity['name'];
             unset($recipe['results']);
+
+            $this->recipes[$name] = $recipe;
+            return;
         }
-        $this->recipes[$entity['name']] = $recipe;
+        if (isset($recipe['results'])) {
+
+            $this->recipes[$entity['name']] = $recipe;
+        } else {
+            $this->recipes[$entity['result']] = $recipe;
+
+        }
     }
 
     public function saveMachine($entity)
@@ -274,8 +286,8 @@ class FactorioGenerator
             $technology['ingredients'][$ingredient[$this->firstSub]] = $ingredient[$this->firstSub + 1];
 
         }
-        $technology['icon'] = $this->saveIcon($entity['icon']);
-        $technology['order'] = preg_replace('~\[.*?\]~', '', $entity['order']);
+        $technology['icon'] = $entity['icon'];
+        $technology['order'] = preg_replace('~\[.*?\]~', '', isset($entity['order']) ? $entity['order'] : '');
         $firstOrder = preg_replace('~-.*~', '', $technology['order']);
         $technology['time'] = $entity['unit']['time'];
         $technology['count'] = $entity['unit']['count'];
@@ -333,13 +345,13 @@ class FactorioGenerator
             $distances[$position] = sqrt($x * $x + $y * $y);
         }
         $angle = abs($angles['pickup_position'] - $angles['insert_position']);
-        $rotation_turns_per_minute = 60/*seconds*/ * ($entity['rotation_speed'] * 60/* tick */) * pi() / $angle;
+
+        $rotation_turns_per_minute = $angle ? 60/*seconds*/ * ($entity['rotation_speed'] * 60/* tick */) * pi() / $angle : 0;
 
         $delta_distance = abs($distances['pickup_position'] - $distances['insert_position']);
         $extension_turns_per_minute = $delta_distance / $entity['extension_speed'] * 60;
         $inserter['turns_per_minute'] = min($rotation_turns_per_minute, $extension_turns_per_minute);
 
-        // $inserter['icon'] = $this->saveIcon($entity['icon']);
         $this->inserters[$entity['name']] = $inserter;
     }
 
@@ -359,7 +371,7 @@ class FactorioGenerator
             }
 
         }
-        $locale = parse_ini_file($path, true, INI_SCANNER_RAW);
+        $locale = @parse_ini_file($path, true, INI_SCANNER_RAW);
         foreach ([
             'item-name',
             'entity-name',
@@ -397,6 +409,11 @@ class FactorioGenerator
         if (!isset($entity['type'])) {
             return;
         }
+        if(isset($entity['icon'])) {
+            $entity['icon'] = $this->saveIcon($entity['icon']);
+        }
+        $this->saveItem($entity);
+
         switch ($entity['type']) {
             case 'item-group':
             case 'item-subgroup':
@@ -410,7 +427,7 @@ class FactorioGenerator
                 }
                 if ($entity['type'] == 'item-group') {
 
-                    $this->groups[$entity['name']]['icon'] = $this->saveIcon($entity['icon']);
+                    $this->groups[$entity['name']]['icon'] = $entity['icon'];
                     $this->groups[$entity['name']]['order'] = $entity['order'];
                 } else {
 
@@ -430,11 +447,8 @@ class FactorioGenerator
             case 'resource':
             case 'recipe':
                 $this->{"save{$entity['type']}"}($entity);
-            default:
-                $this->saveItem($entity);
-                break;
-
         }
+
         if (isset($entity['subgroup']) && !isset($this->subgroups[$entity['subgroup']][$entity['name']])) {
             $this->subgroups[$entity['subgroup']][$entity['name']] = true;
         }
