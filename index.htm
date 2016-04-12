@@ -42,8 +42,7 @@
                         <td class='col-xs-1 translate' data-type='quantorio' data-string='requirement-per-minute'></td>
                         <td class='col-xs-3'>
                             <span class='translate' data-type='quantorio' data-string='made-in'></span>
-                            <div class="icon">&nbsp;</div>
-                            <select class="form-control" id='select-all-assembling'>
+                            <select class="form-control col-xs-offset-1" id='select-all-assembling'>
                             </select>
                         </td>
                         <td class='col-xs-1 translate' data-type='quantorio' data-string='machine-number'></td>
@@ -96,78 +95,7 @@
                     <h4 class="modal-title translate" data-type='quantorio' data-string='alter-data'></h4>
                 </div>
                 <div class="modal-body">
-                    <textarea class='form-control' id="textarea-alter-data" rows='10'>
-{
-    "subgroups": {
-        "science-pack": {
-            "science-pack-1": true,
-            "science-pack-2": true,
-            "alien-science-pack": true,
-            "science-pack-3": true,
-            "coin": true
-        }
-    },
-    "groups": {
-        "combat": {
-            "icon": "local\/questionmark.png",
-            "order": "d",
-            "subgroups": {
-                "gun": "a",
-                "ammo": "b",
-                "capsule": "c",
-                "armor": "d",
-                "equipment": "e",
-                "defensive-structure": "f"
-            }
-        }
-    },
-    "machines": {
-        "burner-mining-drill": {
-            "type": "mining-drill",
-            "crafting_speed": 1,
-            "mining_speed": 0.35,
-            "mining_power": 2.5,
-            "energy_source": {
-                "type": "burner",
-                "effectivity": 1,
-                "emissions": 0.033333333333333
-            }
-        }
-    },
-    "categories": {
-        "basic-solid": [
-            "burner-mining-drill",
-            "basic-mining-drill"
-        ]
-    },
-    "recipes": {
-        "burner-mining-drill": {
-            "result_count": 1,
-            "category": "crafting",
-            "energy_required": 2,
-            "ingredients": {
-                "iron-gear-wheel": 3,
-                "stone-furnace": 1,
-                "iron-plate": 3
-            },
-            "ingredient_count": 3
-        }
-    },
-    "resources": {
-        "coal": {
-                "category": "basic-solid",
-                "hardness": 0.9,
-                "mining_time": 2
-        }
-    },
-    "items": {
-        "burner-mining-drill": {
-            "order": "a[items]-a[burner-mining-drill]",
-            "icon": "local\/bonus-icon.png"
-        }
-    }
-}
-                    </textarea>
+                    <textarea class='form-control' id="textarea-alter-data" rows='10'></textarea>
                     <textarea class='form-control' id="textarea-demo" style="display: none"></textarea>
                 </div>
                 <div class="modal-footer">

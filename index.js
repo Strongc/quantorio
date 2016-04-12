@@ -1,12 +1,3 @@
-/*@cc_on
-  // conditional IE < 9 only fix
-  @if (@_jscript_version <= 9)
-  (function(f){
-     window.setTimeout=f(window.setTimeout);
-     window.setInterval=f(window.setInterval);
-  })(function(f){return function(c,t){var a=[].slice.call(arguments,2);return f(function(){c instanceof Function?c.apply(this,a):eval(c)},t)}});
-  @end
-@*/
 
 var imageLoading = {};
 var translations = [];
@@ -18,6 +9,12 @@ var nameDelimiter = '-_-';
 var requirements = {};
 var inserterOrders = [];
 var inserterTds = '';
+
+var hashes = {};
+var requirementMachines = {};
+
+var saveHashTimeout;
+var saveHashData = {};
 
 var sortByOrder = function (a, b) {
     if (a.order > b.order) {
@@ -329,12 +326,13 @@ var render = {
                 })
             }
             if (typeof config.parent != 'undefined' && typeof config.parent.recipe != 'undefined') {
+                var next = tr.next();
                 $.each(inserterOrders, function (i, inserterConfig) {
                     var parent = config.parent;
                     var inserterName = inserterConfig.name;
                     var inserterCount = Math.ceil(parent.recipe.ingredients[name] * 60 / parent.batchTime / inserters[inserterName].turns_per_minute *
                         100) / 100;
-                    tr.next().find('.inserter-' + inserterName).html(inserterCount);
+                    next.find('.inserter-' + inserterName).html(inserterCount);
                 });
             }
 
@@ -513,11 +511,6 @@ var changeLanguage = function (language) {
     }
 };
 
-var hashes = {};
-var requirementMachines = {};
-
-var saveHashTimeout;
-var saveHashData = {};
 var saveHash = function (name, value) {
     clearTimeout(saveHashTimeout);
     //clone
@@ -810,6 +803,7 @@ var initTargetSelector = function (force) {
         }
         var el = $('#tbody-target .select-target[data-target-no=' + target_selecting + ']');
         var tr = el.closest('tr');
+        tr.find('.row-fold').click();
         el.data('val', val);
         var item, translation, class2x = '',
             assemblingSelector = '';
@@ -990,7 +984,7 @@ $('#container').on('change', '.select-assembling', function () {
     $this.siblings('.icon').data('icon', items[$this.val()].icon).each(getImage);
     var tr = $this.closest('tr');
     if(tr.hasClass('target')) {
-        render.full()
+        render.full();
     } else {
         var path = tr.data('name').split(nameDelimiter);
         var name = path[path.length - 1];

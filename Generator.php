@@ -175,7 +175,7 @@ class FactorioGenerator
         if(!isset($this->items[$entity['name']]['order']) || !$this->items[$entity['name']]['order']) {
             $this->items[$entity['name']]['order'] = preg_replace('~\[.*?\]~', '', isset($entity['order']) ? $entity['order'] : '');
         }
-        if(!isset($this->items[$entity['name']]['icon']) || !$this->items[$entity['name']]['icon']) {
+        if($entity['type'] != 'technology' && (!isset($this->items[$entity['name']]['icon']) || !$this->items[$entity['name']]['icon'])) {
             $this->items[$entity['name']]['icon'] = isset($entity['icon']) ? $entity['icon'] : '';
         }
 
