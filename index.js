@@ -43,9 +43,9 @@ var calcRequirements = function (max_depth) {
     $('#tbody-target tr.target').each(function () {
         var $this = $(this);
         var target = $this.find('.select-target').data('val');
-        var recipe = recipes[target]
+        var recipe = recipes[target];
         requirements[target] = {
-            ratio: typeof recipe == 'undefined' ? 1 : 1 / recipes[target].result_count,
+            name: target,
             // type:
             isBeExpanded: false,
             expanded: false,
@@ -70,8 +70,8 @@ var getTarget = function (type, name) {
 
 var getIcon = function (type, name) {
     var target = getTarget(type, name);
-    if(typeof target == 'undefined') {
-        return
+    if (typeof target == 'undefined') {
+        return;
     }
     if (typeof target.icon != 'undefined') {
         return target.icon;
@@ -95,6 +95,7 @@ var removeFromArray = function (arr) {
 
 var getTargetRow = function (type, val) {
     return generateRow({
+        target: val,
         hasClass: 'success target',
         isBase: true,
         hasTarget: getTargetSelector(type, val),
@@ -128,7 +129,7 @@ var generateRow = function (user_config) {
         '</td><td rowspan="2">' + config.hasTarget + '</td>' +
         '<td rowspan="2"' + (config.hasAmountInput ? '' : ' class="td-amount"') + '>' + (config.hasAmountInput ?
             '<input type="text" class="form-control input-amount" value="1" />' : '') + (config.hasAmount !== false ? config.hasAmount : '') + '</td>' +
-        '<td rowspan="2" class="td-assembling-select">' + config.hasAssemble + '</td>' +
+        '<td rowspan="2">' + getRecipeSelector(config.target) + '</td><td rowspan="2" class="td-assembling-select">' + config.hasAssemble + '</td>' +
         '<td rowspan="2" class="machine-count"></td><td rowspan="2" class="machine-power"></td><td rowspan="2" class="machine-pollution"></td>' +
         getInserterTds(config.isBase) + '</tr><tr>' + (config.isBase ? '' : getInserterTds(config.isBase)) + '</tr>';
 };
@@ -138,7 +139,31 @@ var calcWithRequirements = function () {
     clearTimeout(calcTimeout);
     calcTimeout = setTimeout(function () {
         render.full();
-    }, 100);
+    }, 10);
+
+};
+
+var getRatio = function (config, ingredient_name) {
+    if (typeof config == 'undefined') {
+        return 1;
+    }
+    var recipe = config.recipe;
+    var result_name = config.name;
+    var ret = 1;
+    $.each(recipe.ingredients, function (source, source_amount) {
+        if (source == ingredient_name) {
+            ret = source_amount;
+            return false;
+        }
+    });
+    $.each(recipe.results, function (i, config) {
+        if (config.name == result_name) {
+            ret /= config.amount;
+            return false;
+        }
+    });
+    ret /= recipe.result_count;
+    return ret;
 
 };
 
@@ -146,14 +171,14 @@ var render = {
     render: function () {
         requirements = calcRequirements();
         var html = $();
-        render.remainder = {};
+        render.required = {};
 
         $.each(requirements, function (target, config) {
             $('#tbody-target tr[data-name=' + target + ']').data('config', config);
 
         });
 
-        render.remainderVersion = 0;
+        render.requiredVersion = 0;
         render.full();
     },
 
@@ -162,79 +187,67 @@ var render = {
         render.total_pollution = 0;
 
 
-        render.saves = {};
+        render.saves = {
+            target: {},
+            requirements: {}
+        };
         return render;
     },
 
-    calcRecursive: function (name, config, needs) {
-        var value = needs * config.ratio;
+    calcRecursive: function (name, config, needs, notadd) {
+        var value = needs * getRatio(config.parent, name);
 
         if (!config.root) {
-            if (typeof render.remainder[name] == 'undefined') {
-                render.remainder[name] = {
+            if (typeof render.required[name] == 'undefined') {
+                render.required[name] = {
+                    name: name,
                     value: 0,
                     recipe: config.recipe,
-                    version: render.remainderVersion,
+                    version: render.requiredVersion,
                     sub: getUpstreamsRecursive(config.type, name, config),
-                    ratio: 1 / (typeof recipes[name] != 'undefined' ? recipes[name].result_count : 1)
                 };
             }
-            if (render.remainder[name].version != render.remainderVersion) {
-                render.remainder[name].version = render.remainderVersion;
-                render.remainder[name].value = 0;
+            if (render.required[name].version != render.requiredVersion) {
+                render.required[name].version = render.requiredVersion;
+                render.required[name].value = 0;
             }
-            if (!config.isBeExpanded) {
-                render.remainder[name].value += value;
+            if (!config.isBeExpanded && !notadd) {
+                render.required[name].value += value;
             }
 
         }
         config.value = value;
 
         $.each(config.sub, function (k, v) {
-            render.calcRecursive(k, v, value);
-        });
-    },
-
-    calcRemainder: function () {
-        var recursive = function (name, config, needs) {
-            var value = needs * config.ratio;
-
-            if (config.isBeExpanded) {
-                render.remainder[name].value -= value;
-            }
-            config.value = value;
-            $.each(config.sub, function (k, v) {
-                recursive(k, v, value);
-
-            });
-        };
-
-        $.each(render.remainder, function (k, v) {
-            // trick
-            recursive(k, v, v.value / v.ratio);
+            render.calcRecursive(k, v, value, notadd);
         });
     },
 
     full: function () {
         render.init();
-        render.remainderVersion++;
+        render.requiredVersion++;
+        var html = $();
 
         $('#tbody-target tr.target').each(function () {
             var $this = $(this);
             var target = $this.find('.select-target').data('val');
             var needs = $this.find('.input-amount').val();
             render.calcRecursive(target, requirements[target], needs);
-            render.saves[target] = $this.find('.select-assembling').val() + ';' + needs;
+            render.saves.target[target] = $this.find('.select-this-machine.selected').data('name') + ';' + needs;
         });
+        // render.requiredVersion++;
 
 
-        saveHash('targets', render.saves);
+        if (render.requiredVersion == 1) {
+            $.each(render.required, function (k, v) {
+                render.calcRecursive(k, v, v.value / getRatio(v.parent, k), true);
+            });
 
-        var html = $();
-        if (render.remainderVersion == 1) {
+            saveHash('targets', render.saves.target);
 
-            $.each(render.remainder, function (name, config) {
+            $.each(render.required, function (name, config) {
                 var row = $(generateRow({
+                    target: name,
                     hasClass: 'base',
                     isBase: true,
                     hasName: name,
@@ -249,17 +262,12 @@ var render = {
                 html = html.add(row);
             });
 
-            $('#tbody-remainder').html(html).find('.icon').each(getImage);
+            $('#tbody-required').html(html).find('.icon').each(getImage);
         }
-        render.calcRemainder();
 
-
-        $('#tbody-target tr.target,#tbody-remainder tr.base').each(function () {
+        $('#tbody-target tr.target,#tbody-required tr.base').each(function () {
             render.single($(this));
         });
-
-        render.saves = {};
-
 
         $('.total-power').html(Math.ceil(render.total_electric_power * 100) / 100 + ' kW');
         $('.total-pollution').html(Math.ceil(render.total_pollution * 100) / 100);
@@ -273,7 +281,8 @@ var render = {
 
         config = tr.data('config');
         value = config.value;
-        if (value == 0 && tr.closest('tbody').attr('id') == 'tbody-remainder') {
+        if (value == 0 && tr.closest('tbody').attr('id') == 'tbody-required') {
+            tr.find('.row-fold').click();
             tr.hide();
             tr.next().hide();
             return;
@@ -282,13 +291,20 @@ var render = {
             tr.next().show();
         }
 
-        var machine_name = tr.find('.select-assembling').val();
+        var machine_name = tr.find('.select-this-machine.selected').data('name');
         var machine = machines[machine_name];
+        var recipe_name = config.recipe_name;
         if (machine) {
-            render.saves[name] = machine_name;
-            requirementMachines[name] = machine_name;
+            if (config && config.root) {
+                render.saves.target[name] = machine_name + ';' + value;
 
-            saveHash('requirements', render.saves);
+                saveHash('targets', render.saves.target);
+            } else {
+                render.saves.requirements[name] = (typeof recipe_name != 'undefined' ? recipe_name + ';' : '') + machine_name;
+                requirementMachines[name] = machine_name;
+
+                saveHash('requirements', render.saves.requirements);
+            }
         }
         if (config) {
             tr.find('.td-amount').html(Math.ceil(value * 100) / 100);
@@ -307,15 +323,14 @@ var render = {
                 var technology = technologys[name];
 
                 var count = value / 60 * technology.time * technology.count;
-                console.log(count)
             } else {
-                var recipe = recipes[name];
+                var recipe = config.recipe;
                 config.batchTime = recipe.energy_required / machine.crafting_speed;
 
                 var count = value / 60 * config.batchTime / recipe.result_count;
 
             }
-            if (typeof recipe != 'undefined' && (typeof recipe.type == 'undefined' || recipe.type != 'fluid')) {
+            if (typeof recipe != 'undefined') {
                 $.each(inserterOrders, function (i, inserterConfig) {
                     if (typeof config.batchTime != 'undefined') {
                         var inserterName = inserterConfig.name;
@@ -323,7 +338,7 @@ var render = {
                             100) / 100;
                         tr.find('.inserter-' + inserterName).html(inserterCount);
                     }
-                })
+                });
             }
             if (typeof config.parent != 'undefined' && typeof config.parent.recipe != 'undefined') {
                 var next = tr.next();
@@ -350,8 +365,8 @@ var render = {
 
             if (config.expanded) {
                 tr.data('sub').each(function () {
-                    render.single($(this))
-                })
+                    render.single($(this));
+                });
             }
         }
     }
@@ -393,16 +408,16 @@ var getUpstreamsRecursive = function (type, targetName, parent, max_depth) {
             if (typeof quantities[name] == 'undefined') {
                 quantities[name] = {
                     type: 'technology',
-                }
+                };
 
                 quantities[name].sub = getUpstreamsRecursive('recipe', technologys[name], quantities[name], 1);
                 quantities[name].sub = getUpstreamsRecursive(type, name, quantities[name], max_depth);
 
             }
 
-        })
+        });
 
-        return quantities
+        return quantities;
 
     }
 
@@ -413,8 +428,8 @@ var getUpstreamsRecursive = function (type, targetName, parent, max_depth) {
 
     $.each(ingredients, function (k, v) {
         quantities[k] = {
+            name: k,
             type: typeof resources[k] != 'undefined' ? 'resource' : type,
-            ratio: v / target.result_count,
             sub: {},
             isBeExpanded: false,
             expanded: false,
@@ -455,16 +470,17 @@ var getAssemblingSelectorEx = function (type, name, val) {
             val = categories[category][0];
         }
     }
-    var html = '<div class="icon" data-icon="' + items[val].icon + '">&nbsp;</div> <select class="select-assembling form-control" data-name="' + name +
-        '">';
-
+    var html = '<div class="table-row">';
     $.each(categories[category], function (k, name) {
-        if (machines[name].type == 'assembling-machine' && machines[name].ingredient_count < recipe.ingredient_count) return true;
-        html += '<option value="' + name + '"' + (val == name ? 'selected="selected"' : '') + ' class="translate" data-string="' + name + '">' +
-            translate(name, true) + '</option>';
+        html += '<abbr class="translate-data" title="" data-translate-target="title" data-string="' +
+            name +
+            '"><div class="icon select-this-machine" data-name="' + name + '" data-icon="' + getIcon('recipe', name) + '">&nbsp;</div></abbr>';
     });
-    html += '</select>';
-    return html;
+    html += '</div>';
+    //TODO optimize
+    var obj = $(html);
+    obj.find('.icon').first().addClass('selected');
+    return obj.prop('outerHTML');
 };
 
 var getTargetSelector = function (type, val) {
@@ -477,6 +493,21 @@ var getTargetSelector = function (type, val) {
         '">&nbsp;</div> ' + translate(val) + '</a></div>';
     return html;
 
+};
+
+var getRecipeSelector = function (val) {
+    if (typeof results[val] == 'undefined' || results[val].length == 1) {
+        return '';
+    }
+    var html = '<div class="table-row">';
+    $.each(results[val], function (k, recipe_name) {
+        html += '<abbr class="translate-data" title="" data-translate-target="title" data-string="' +
+            recipe_name +
+            '"><div class="icon select-this-recipe" data-name="' + recipe_name + '" data-icon="' +
+            getIcon('recipe', recipe_name) + '">&nbsp;</div></a></abbr>';
+    });
+    html += '</div>';
+    return html;
 };
 
 var changeLanguage = function (language) {
@@ -539,7 +570,7 @@ var saveHash = function (name, value) {
             tmp.push(k + '=' + v);
         });
         window.location.hash = tmp.join('&');
-    }, 100);
+    }, 10);
 
 };
 
@@ -599,7 +630,7 @@ var loadTargetRequirement = function () {
             row.find('.input-amount').val(needs);
             row.attr('data-name', target);
             row.find('.td-assembling-select').html(getAssemblingSelectorEx(type, target)).find('.icon').each(getImage);
-            row.find('.select-assembling').val(machine);
+            row.find('.select-this-machine').removeClass('selected').filter('[data-name=' + machine + ']').addClass('selected');
             row.attr('data-type', type);
             tbody.append(row);
 
@@ -609,12 +640,20 @@ var loadTargetRequirement = function () {
         render.render();
 
         if (typeof requirementsBak != 'undefined' && requirementsBak != '') {
-            var tbody = $('#tbody-remainder');
+            var tbody = $('#tbody-required');
             $.each(requirementsBak.split(','), function (k, v) {
-                var line = v.split(':');
+                var line = v.split(/[:;]/);
                 var name = line[0];
-                var machine = line[1];
-                tbody.find('tr[data-name=' + name + '] .select-assembling').val(machine).change();
+                var recipe_name = line.length > 2 ? line[1] : '';
+                var machine = line.length > 2 ? line[2] : line[1];
+
+                if(recipe_name) {
+                    // In most of time it is well (calling click) because only a few of products can be crafted by more than 1 recipes
+                    tbody.find('tr[data-name=' + name + '] .select-this-recipe').filter('[data-name='+recipe_name+']').click();
+                }
+
+                tbody.find('tr[data-name=' + name + '] .select-this-machine').removeClass('selected').filter('[data-name=' + machine + ']').addClass(
+                    'selected');
                 requirementMachines[name] = machine;
             });
         }
@@ -641,11 +680,11 @@ var loadInserters = function () {
 
 var getInserterTds = function (rowspan) {
     if (rowspan) {
-        return inserterTds.replace(/<td/g, '<td rowspan="2"')
+        return inserterTds.replace(/<td/g, '<td rowspan="2"');
     } else {
-        return inserterTds
+        return inserterTds;
     }
-}
+};
 
 
 var rawTranslate = function (groupName, key) {
@@ -708,15 +747,15 @@ var initTargetSelector = function (force) {
     var html = '<ul class="nav nav-tabs" role="tablist">';
     var panel = '';
     var actived = false;
-    var groupKeys = []
+    var groupKeys = [];
     $.each(groups, function (group_name, config) {
         groupKeys.push({ order: config.order, name: group_name });
-    })
+    });
     groupKeys.sort(sortByOrder);
 
     $.each(groupKeys, function (i, orderConfig) {
-        var group_name = orderConfig.name
-        var config = groups[group_name]
+        var group_name = orderConfig.name;
+        var config = groups[group_name];
         var html_append = '';
         var panel_append = '';
         var is_append = false;
@@ -725,7 +764,7 @@ var initTargetSelector = function (force) {
             icon = 'local/questionmark.png';
         }
         html_append += '<li role="presentation" class="target-selector-tabs' + (actived ? '' : ' active') + '"><a href="#selector-' + group_name +
-            '" aria-controls="selector-' + group_name + '" role="tab" data-toggle="tab">' + '<img src="' + config.icon + '"/> ' + '</a></li>';
+            '" aria-controls="selector-' + group_name + '" role="tab" data-toggle="tab">' + '<img src="' + icon + '"/> ' + '</a></li>';
         panel_append += '<div role="tabpanel" class="tab-pane' + (actived ? '' : ' active') + '" id="selector-' + group_name +
             '"><div class="table">';
         $.each(config.subgroups, function (subgroup_name, order) {
@@ -751,7 +790,7 @@ var initTargetSelector = function (force) {
                         item_name +
                         '"><a href="javascript:;" class="select-this-target" data-name="' + item_name +
                         '"><div class="icon" data-icon="' +
-                        item.icon + '">&nbsp;</div></a></abbr>';
+                        getIcon('recipe', item_name) + '">&nbsp;</div></a></abbr>';
 
 
                 } else {
@@ -766,7 +805,7 @@ var initTargetSelector = function (force) {
                         '<abbr class="translate-data" title="" data-translate-target="title" data-group="technology" data-string="' +
                         item_name + '"><a href="javascript:;" class="select-this-target technology" data-name="' + item_name +
                         '"><div class="icon icon-technology" data-icon="' +
-                        item.icon + '">&nbsp;</div></a></abbr>';
+                        getIcon('technology', item_name) + '">&nbsp;</div></a></abbr>';
 
                 }
 
@@ -813,14 +852,16 @@ var initTargetSelector = function (force) {
             translation = translateEx('technology', val);
             class2x = ' icon-technology';
             assemblingSelector = getAssemblingSelectorEx('technology', val);
+            var icon = getIcon('technology', val);
         } else {
             tr.attr('data-type', 'recipe');
             item = items[val];
             translation = translate(val);
             assemblingSelector = getAssemblingSelector(val);
+            var icon = getIcon('recipe', val);
         }
 
-        el.find('a').html('<div class="icon' + class2x + '" data-icon="' + item.icon + '">&nbsp;</div> ' + translation).find('.icon').each(getImage);
+        el.find('a').html('<div class="icon' + class2x + '" data-icon="' + icon + '">&nbsp;</div> ' + translation).find('.icon').each(getImage);
 
         tr.find('.td-assembling-select').html(assemblingSelector).find('.icon').each(getImage);
         tr.attr('data-name', val);
@@ -922,8 +963,6 @@ $('#table-material').on('click', 'a.row-expand', function () {
     }
     config = tr.data('config');
     config.expanded = true;
-    render.remainderVersion++;
-    render.calcRecursive(name, config, amount);
 
     var rows = $();
 
@@ -931,6 +970,7 @@ $('#table-material').on('click', 'a.row-expand', function () {
         var machine;
 
         var row = $(generateRow({
+            target: name,
             hasName: name,
             hasExpand: true,
             hasAssemble: getAssemblingSelectorEx(config.type, name, machine),
@@ -952,7 +992,7 @@ $('#table-material').on('click', 'a.row-expand', function () {
     $(this).replaceWith('<a class="btn btn-warning btn-mono row-fold">&lt;</a>');
 
     clearTimeout(calcFullTimer);
-    calcFullTimer = setTimeout(render.full, 100);
+    calcFullTimer = setTimeout(render.full, 10);
 
 });
 
@@ -970,7 +1010,27 @@ $('#table-material').on('click', 'a.row-fold', function () {
     $(this).replaceWith('<a class="btn btn-info btn-mono row-expand">&gt;</a>');
 
     clearTimeout(calcFullTimer);
-    calcFullTimer = setTimeout(render.full, 100);
+    calcFullTimer = setTimeout(render.full, 10);
+
+});
+
+
+$('#table-material').on('click', '.select-this-recipe', function () {
+    var $this = $(this);
+    $this.closest('.table-row').find('.icon').removeClass('selected');
+    $this.addClass('selected');
+    var recipe_name = $this.data('name');
+    var tr = $this.closest('tr');
+    tr.find('.row-fold').click();
+    var config = tr.data('config');
+    config.recipe = recipes[recipe_name];
+    config.type = 'recipe';
+    config.recipe_name = recipe_name;
+    var name = tr.data('name');
+    tr.find('.td-assembling-select').html(getAssemblingSelectorEx(config.type, recipe_name)).find('.icon').each(getImage);
+    config.sub = getUpstreamsRecursive(config.type, config.recipe, config);
+    render.calcRecursive(name, config, config.value / getRatio(config.parent, name));
+    render.single(tr);
 
 });
 
@@ -979,23 +1039,24 @@ $('#select-translate').change(function () {
     changeLanguage($(this).val());
 });
 
-$('#container').on('change', '.select-assembling', function () {
+$('#container').on('click', '.select-this-machine', function () {
     var $this = $(this);
-    $this.siblings('.icon').data('icon', items[$this.val()].icon).each(getImage);
+    $this.closest('.table-row').find('.icon').removeClass('selected');
+    $this.addClass('selected');
     var tr = $this.closest('tr');
-    if(tr.hasClass('target')) {
+    if (tr.hasClass('target')) {
         render.full();
     } else {
         var path = tr.data('name').split(nameDelimiter);
         var name = path[path.length - 1];
         render.single(tr);
-
     }
 });
 
+
 $('#select-all-assembling').change(function () {
     var val = $(this).val();
-    $('select.select-assembling option[value=' + val + ']').parent().val(val).change();
+    $('#table-material .select-this-machine[data-name=' + val + ']').click();
 });
 
 $('#button-show-demo').click(function () {

@@ -24,16 +24,23 @@ div.icon-technology {
     background-size: 100%
 }
 
-.table-row div.icon {
+#modal-target-selector .table-row div.icon {
     background-color: #ddd;
+}
+
+.table-row div.icon {
     border: 1px solid #ccc;
+    margin: 1px;
     display: inline-block;
+}
+
+.selected {
+    background-color: #f0ad4e;
 }
 
 a.select-this-target {
     width: 36px;
     height: 36px;
-    margin: 1px
 }
 
 abbr[title] {
@@ -77,4 +84,12 @@ td {
 
 textarea {
     font-family: Courier, monospace;
+}
+
+.table-cell {
+    display: table-cell;
+}
+
+.select-this-machine,.select-this-recipe {
+    cursor: pointer;
 }

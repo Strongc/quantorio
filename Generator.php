@@ -10,6 +10,7 @@ class FactorioGenerator
     public $machines = [];
     public $categories = [];
     public $recipes = [];
+    public $results = [];
     public $resources = [];
     public $items = [];
     public $languages = [];
@@ -58,7 +59,7 @@ class FactorioGenerator
 
     public function addMod($path)
     {
-        if(!is_file("{$path}/info.json")) {
+        if (!is_file("{$path}/info.json")) {
             return;
         }
         $info = json_decode(file_get_contents("{$path}/info.json"));
@@ -109,6 +110,7 @@ class FactorioGenerator
         }
         $this->writeJs('categories', $this->categories, true, true);
         $this->writeJs('recipes', $this->recipes);
+        $this->writeJs('results', $this->results);
         $this->writeJs('resources', $this->resources);
         $this->writeJs('items', $this->items);
         $this->writeJs('technologys', $this->technologys);
@@ -172,10 +174,10 @@ class FactorioGenerator
 
     public function saveItem($entity)
     {
-        if(!isset($this->items[$entity['name']]['order']) || !$this->items[$entity['name']]['order']) {
+        if (!isset($this->items[$entity['name']]['order']) || !$this->items[$entity['name']]['order']) {
             $this->items[$entity['name']]['order'] = preg_replace('~\[.*?\]~', '', isset($entity['order']) ? $entity['order'] : '');
         }
-        if($entity['type'] != 'technology' && (!isset($this->items[$entity['name']]['icon']) || !$this->items[$entity['name']]['icon'])) {
+        if ($entity['type'] != 'technology' && (!isset($this->items[$entity['name']]['icon']) || !$this->items[$entity['name']]['icon'])) {
             $this->items[$entity['name']]['icon'] = isset($entity['icon']) ? $entity['icon'] : '';
         }
 
@@ -211,22 +213,28 @@ class FactorioGenerator
         }
 
         $recipe['ingredient_count'] = count($recipe['ingredients']);
-        if (isset($recipe['results']) && count($recipe['results']) == 1) {
-            $recipe['result_count'] = isset($recipe['results'][$this->firstSub]['amount']) ? $recipe['results'][$this->firstSub]['amount'] : 1;
-            $recipe['type'] = isset($recipe['results'][$this->firstSub]['type']) ? $recipe['results'][$this->firstSub]['type'] : 'item';
-            $name = isset($recipe['results'][$this->firstSub]['name']) ? $recipe['results'][$this->firstSub]['name'] : $entity['name'];
-            unset($recipe['results']);
-
-            $this->recipes[$name] = $recipe;
-            return;
-        }
         if (isset($recipe['results'])) {
-
-            $this->recipes[$entity['name']] = $recipe;
+            // force index start at 0
+            $recipe['results'] = array_merge($recipe['results']);
         } else {
-            $this->recipes[$entity['result']] = $recipe;
-
+            $recipe['results'] = [
+                [
+                    'type' => 'item',
+                    'name' => $entity['result'],
+                    'amount' => isset($entity['result_count']) ? $entity['result_count'] : 1,
+                ],
+            ];
+            $recipe['result_count'] = 1;
         }
+        if (isset($entity['icon'])) {
+            $recipe['icon'] = $this->saveIcon($entity['icon']);
+        }
+        $this->recipes[$entity['name']] = $recipe;
+
+        foreach ($recipe['results'] as $result) {
+            $this->results[$result['name']][] = $entity['name'];
+        }
+
     }
 
     public function saveMachine($entity)
@@ -409,7 +417,7 @@ class FactorioGenerator
         if (!isset($entity['type'])) {
             return;
         }
-        if(isset($entity['icon'])) {
+        if (isset($entity['icon'])) {
             $entity['icon'] = $this->saveIcon($entity['icon']);
         }
         $this->saveItem($entity);

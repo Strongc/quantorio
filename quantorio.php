@@ -2,7 +2,7 @@
 
 require 'Generator.php';
 
-$target = 'public';
+$target = '.';
 
 if (class_exists('lua')) {
 
@@ -15,6 +15,7 @@ if (class_exists('lua')) {
     $currentPath;
     $lua->registerCallback('php_findfile', function ($path) use (&$modPath, &$currentPath, $lua) {
         $path = str_replace('.', '/', $path);
+        // var_dump($path);
         if (is_file("core/lualib/{$path}.lua")) {
             $filename = "core/lualib/$path.lua";
         } elseif (is_file("{$modPath}/{$path}.lua")) {
@@ -25,6 +26,7 @@ if (class_exists('lua')) {
             var_dump($modPath, $path);
         }
         $currentPath = dirname($filename);
+        // var_dump($filename);
 
         return $lua->include($filename);
     });
@@ -125,22 +127,27 @@ if (class_exists('lua')) {
         }
     }
     arsort($modsToBeLoad);
+    // var_dump($modsToBeLoad);
+    // exit;
     foreach(['data','data-updates','data-final-fixes'] as $file) {
         foreach ($modsToBeLoad as $name => $level) {
             if(!isset($mods[$name])) {
                 continue;
             }
+            // var_dump($name);
             $modPath = reset($mods[$name])['path'];
             if(is_file("{$modPath}/{$file}.lua")) {
                 try {
                     $lua->include("{$modPath}/{$file}.lua");
                 } catch(LuaException $e) {
                     var_dump($e->getMessage());
+                    // exit;
                 }
             }
         }
     }
 
+    // $lua->include("{$mod}/data.lua");
     $lua->eval('putdata(data.raw)');
 } else {
 
