@@ -223,6 +223,10 @@ var render = {
         });
     },
 
+    calcRequired: function () {
+        // $.each(render.)
+    },
+
     full: function () {
         render.init();
         render.requiredVersion++;
@@ -235,7 +239,6 @@ var render = {
             render.calcRecursive(target, requirements[target], needs);
             render.saves.target[target] = $this.find('.select-this-machine.selected').data('name') + ';' + needs;
         });
-        // render.requiredVersion++;
 
 
         if (render.requiredVersion == 1) {
@@ -331,10 +334,18 @@ var render = {
 
             }
             if (typeof recipe != 'undefined') {
+                var result_count = 0;
+                $.each(recipe.results, function (i, result) {
+                    if (result.name == name) {
+                        result_count = result.amount;
+                        return false;
+                    }
+                });
+
                 $.each(inserterOrders, function (i, inserterConfig) {
                     if (typeof config.batchTime != 'undefined') {
                         var inserterName = inserterConfig.name;
-                        var inserterCount = Math.ceil(recipe.result_count * 60 / config.batchTime / inserters[inserterName].turns_per_minute *
+                        var inserterCount = Math.ceil(result_count * 60 / config.batchTime / inserters[inserterName].turns_per_minute *
                             100) / 100;
                         tr.find('.inserter-' + inserterName).html(inserterCount);
                     }
@@ -342,6 +353,8 @@ var render = {
             }
             if (typeof config.parent != 'undefined' && typeof config.parent.recipe != 'undefined') {
                 var next = tr.next();
+                var ingredient_count = 0;
+
                 $.each(inserterOrders, function (i, inserterConfig) {
                     var parent = config.parent;
                     var inserterName = inserterConfig.name;
@@ -1029,7 +1042,7 @@ $('#table-material').on('click', '.select-this-recipe', function () {
     var name = tr.data('name');
     tr.find('.td-assembling-select').html(getAssemblingSelectorEx(config.type, recipe_name)).find('.icon').each(getImage);
     config.sub = getUpstreamsRecursive(config.type, config.recipe, config);
-    render.calcRecursive(name, config, config.value / getRatio(config.parent, name));
+    render.calcRecursive(name, config, config.value / getRatio(config.parent, name), true);
     render.single(tr);
 
 });
