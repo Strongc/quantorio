@@ -1,5 +1,9 @@
 items=
 {
+    "accumulator": {
+        "order": "e-a",
+        "icon": "graphics\/base\/graphics\/icons\/accumulator.png"
+    },
     "advanced-circuit": {
         "order": "d",
         "icon": "graphics\/base\/graphics\/icons\/advanced-circuit.png"
@@ -32,69 +36,17 @@ items=
         "order": "c",
         "icon": "graphics\/base\/graphics\/icons\/assembling-machine-3.png"
     },
-    "basic-accumulator": {
-        "order": "e-a",
-        "icon": "graphics\/base\/graphics\/icons\/basic-accumulator.png"
+    "automated-cleanup": {
+        "order": "b-c",
+        "icon": "graphics\/base\/graphics\/achievement\/automated-cleanup.png"
     },
-    "basic-armor": {
-        "order": "a",
-        "icon": "graphics\/base\/graphics\/icons\/basic-armor.png"
-    },
-    "basic-beacon": {
-        "order": "a",
-        "icon": "graphics\/base\/graphics\/icons\/basic-beacon.png"
-    },
-    "basic-bullet-magazine": {
-        "order": "a-a",
-        "icon": "graphics\/base\/graphics\/icons\/basic-bullet-magazine.png"
-    },
-    "basic-electric-discharge-defense-equipment": {
-        "order": "d-b",
-        "icon": "graphics\/base\/graphics\/icons\/basic-electric-discharge-defense-equipment.png"
-    },
-    "basic-electric-discharge-defense-remote": {
-        "order": "z",
-        "icon": "graphics\/base\/graphics\/equipment\/basic-electric-discharge-defense-equipment-ability.png"
-    },
-    "basic-exoskeleton-equipment": {
-        "order": "e-a",
-        "icon": "graphics\/base\/graphics\/icons\/basic-exoskeleton-equipment.png"
-    },
-    "basic-grenade": {
-        "order": "a",
-        "icon": "graphics\/base\/graphics\/icons\/basic-grenade.png"
-    },
-    "basic-inserter": {
-        "order": "b",
-        "icon": "graphics\/base\/graphics\/icons\/basic-inserter.png"
-    },
-    "basic-laser-defense-equipment": {
-        "order": "d-a",
-        "icon": "graphics\/base\/graphics\/icons\/basic-laser-defense-equipment.png"
-    },
-    "basic-mining-drill": {
-        "order": "a-b",
-        "icon": "graphics\/base\/graphics\/icons\/basic-mining-drill.png"
-    },
-    "basic-modular-armor": {
-        "order": "c",
-        "icon": "graphics\/base\/graphics\/icons\/basic-modular-armor.png"
+    "automated-construction": {
+        "order": "b-b-a",
+        "icon": "graphics\/base\/graphics\/achievement\/automated-construction.png"
     },
     "basic-oil-processing": {
         "order": "a-a",
         "icon": "graphics\/base\/graphics\/icons\/fluid\/basic-oil-processing.png"
-    },
-    "basic-splitter": {
-        "order": "c-a",
-        "icon": "graphics\/base\/graphics\/icons\/basic-splitter.png"
-    },
-    "basic-transport-belt": {
-        "order": "a-a",
-        "icon": "graphics\/base\/graphics\/icons\/basic-transport-belt.png"
-    },
-    "basic-transport-belt-to-ground": {
-        "order": "b-a",
-        "icon": "graphics\/base\/graphics\/icons\/basic-transport-belt-to-ground.png"
     },
     "battery": {
         "order": "i",
@@ -108,6 +60,10 @@ items=
         "order": "c-b",
         "icon": "graphics\/base\/graphics\/icons\/battery-mk2-equipment.png"
     },
+    "beacon": {
+        "order": "a",
+        "icon": "graphics\/base\/graphics\/icons\/beacon.png"
+    },
     "behemoth-biter": {
         "order": "b-b-d",
         "icon": "graphics\/base\/graphics\/icons\/behemoth-biter.png"
@@ -118,7 +74,7 @@ items=
     },
     "behemoth-spitter": {
         "order": "b-b-f",
-        "icon": "graphics\/base\/graphics\/icons\/creeper.png"
+        "icon": "graphics\/base\/graphics\/icons\/behemoth-spitter.png"
     },
     "behemoth-spitter-corpse": {
         "order": "c-b-d",
@@ -158,7 +114,7 @@ items=
     },
     "big-spitter": {
         "order": "b-b-f",
-        "icon": "graphics\/base\/graphics\/icons\/creeper.png"
+        "icon": "graphics\/base\/graphics\/icons\/big-spitter.png"
     },
     "big-spitter-corpse": {
         "order": "c-b-c",
@@ -183,6 +139,10 @@ items=
     "blueprint": {
         "order": "c-a",
         "icon": "graphics\/base\/graphics\/icons\/blueprint.png"
+    },
+    "blueprint-book": {
+        "order": "c-c",
+        "icon": "graphics\/base\/graphics\/icons\/blueprint-book.png"
     },
     "boiler": {
         "order": "b-a",
@@ -244,8 +204,24 @@ items=
         "order": "e",
         "icon": "graphics\/base\/graphics\/icons\/chemical-plant.png"
     },
+    "circuit-veteran-1": {
+        "order": "d-c-a",
+        "icon": "graphics\/base\/graphics\/achievement\/circuit-veteran-1.png"
+    },
+    "circuit-veteran-2": {
+        "order": "d-c-b",
+        "icon": "graphics\/base\/graphics\/achievement\/circuit-veteran-2.png"
+    },
+    "circuit-veteran-3": {
+        "order": "d-c-c",
+        "icon": "graphics\/base\/graphics\/achievement\/circuit-veteran-3.png"
+    },
+    "cluster-grenade": {
+        "order": "a-b",
+        "icon": "graphics\/base\/graphics\/icons\/cluster-grenade.png"
+    },
     "coal": {
-        "order": "a-b-c",
+        "order": "a-b-a",
         "icon": "graphics\/base\/graphics\/icons\/coal.png"
     },
     "coin": {
@@ -260,8 +236,20 @@ items=
         "order": "g",
         "icon": "graphics\/base\/graphics\/icons\/computer.png"
     },
+    "computer-age-1": {
+        "order": "d-d-a",
+        "icon": "graphics\/base\/graphics\/achievement\/computer-age-1.png"
+    },
+    "computer-age-2": {
+        "order": "d-d-b",
+        "icon": "graphics\/base\/graphics\/achievement\/computer-age-2.png"
+    },
+    "computer-age-3": {
+        "order": "d-d-c",
+        "icon": "graphics\/base\/graphics\/achievement\/computer-age-3.png"
+    },
     "concrete": {
-        "order": "b",
+        "order": "b-a",
         "icon": "graphics\/base\/graphics\/icons\/concrete.png"
     },
     "constant-combinator": {
@@ -285,16 +273,12 @@ items=
         "icon": "graphics\/base\/graphics\/icons\/copper-plate.png"
     },
     "crude-oil": {
-        "order": "a-b",
-        "icon": "graphics\/base\/graphics\/icons\/fluid\/crude-oil.png"
+        "order": "a-b-a",
+        "icon": "graphics\/base\/graphics\/icons\/crude-oil.png"
     },
     "crude-oil-barrel": {
         "order": "b",
         "icon": "graphics\/base\/graphics\/icons\/fluid\/crude-oil-barrel.png"
-    },
-    "curved-rail": {
-        "order": "a-b",
-        "icon": "graphics\/base\/graphics\/icons\/curved-rail.png"
     },
     "curved-rail-remnants": {
         "order": "d-b-b",
@@ -328,6 +312,10 @@ items=
         "order": "d",
         "icon": "graphics\/base\/graphics\/icons\/defender-capsule.png"
     },
+    "delivery-service": {
+        "order": "b-d-b",
+        "icon": "graphics\/base\/graphics\/achievement\/delivery-service.png"
+    },
     "destroyer": {
         "order": "e-a-c",
         "icon": "graphics\/base\/graphics\/icons\/destroyer.png"
@@ -339,6 +327,14 @@ items=
     "diesel-locomotive": {
         "order": "a-f",
         "icon": "graphics\/base\/graphics\/icons\/diesel-locomotive.png"
+    },
+    "discharge-defense-equipment": {
+        "order": "d-b",
+        "icon": "graphics\/base\/graphics\/icons\/discharge-defense-equipment.png"
+    },
+    "discharge-defense-remote": {
+        "order": "z",
+        "icon": "graphics\/base\/graphics\/equipment\/discharge-defense-equipment-ability.png"
     },
     "distractor": {
         "order": "e-a-b",
@@ -355,6 +351,10 @@ items=
     "dry-tree": {
         "order": "a-c",
         "icon": "graphics\/base\/graphics\/icons\/dry-tree.png"
+    },
+    "eco-unfriendly": {
+        "order": "a-b",
+        "icon": "graphics\/base\/graphics\/achievement\/eco-unfriendly.png"
     },
     "effectivity-module": {
         "order": "c-a",
@@ -375,6 +375,10 @@ items=
     "electric-furnace": {
         "order": "c",
         "icon": "graphics\/base\/graphics\/icons\/electric-furnace.png"
+    },
+    "electric-mining-drill": {
+        "order": "a-b",
+        "icon": "graphics\/base\/graphics\/icons\/electric-mining-drill.png"
     },
     "electronic-circuit": {
         "order": "c",
@@ -400,6 +404,10 @@ items=
         "order": "f",
         "icon": "graphics\/base\/graphics\/icons\/engine-unit.png"
     },
+    "exoskeleton-equipment": {
+        "order": "e-a",
+        "icon": "graphics\/base\/graphics\/icons\/exoskeleton-equipment.png"
+    },
     "explosive-cannon-shell": {
         "order": "d-b",
         "icon": "graphics\/base\/graphics\/icons\/explosive-cannon-shell.png"
@@ -412,6 +420,10 @@ items=
         "order": "h",
         "icon": "graphics\/base\/graphics\/icons\/explosives.png"
     },
+    "express-loader": {
+        "order": "d-c",
+        "icon": "graphics\/base\/graphics\/icons\/express-loader.png"
+    },
     "express-splitter": {
         "order": "c-c",
         "icon": "graphics\/base\/graphics\/icons\/express-splitter.png"
@@ -420,13 +432,17 @@ items=
         "order": "a-c",
         "icon": "graphics\/base\/graphics\/icons\/express-transport-belt.png"
     },
-    "express-transport-belt-to-ground": {
+    "express-underground-belt": {
         "order": "b-c",
-        "icon": "graphics\/base\/graphics\/icons\/express-transport-belt-to-ground.png"
+        "icon": "graphics\/base\/graphics\/icons\/express-underground-belt.png"
     },
     "fast-inserter": {
         "order": "d",
         "icon": "graphics\/base\/graphics\/icons\/fast-inserter.png"
+    },
+    "fast-loader": {
+        "order": "d-b",
+        "icon": "graphics\/base\/graphics\/icons\/fast-loader.png"
     },
     "fast-splitter": {
         "order": "c-b",
@@ -436,13 +452,21 @@ items=
         "order": "a-b",
         "icon": "graphics\/base\/graphics\/icons\/fast-transport-belt.png"
     },
-    "fast-transport-belt-to-ground": {
+    "fast-underground-belt": {
         "order": "b-b",
-        "icon": "graphics\/base\/graphics\/icons\/fast-transport-belt-to-ground.png"
+        "icon": "graphics\/base\/graphics\/icons\/fast-underground-belt.png"
     },
     "fill-crude-oil-barrel": {
         "order": "b",
         "icon": "graphics\/base\/graphics\/icons\/fluid\/fill-crude-oil-barrel.png"
+    },
+    "filter-inserter": {
+        "order": "e",
+        "icon": "graphics\/base\/graphics\/icons\/filter-inserter.png"
+    },
+    "firearm-magazine": {
+        "order": "a-a",
+        "icon": "graphics\/base\/graphics\/icons\/firearm-magazine.png"
     },
     "fish": {
         "order": "b-a",
@@ -455,6 +479,10 @@ items=
     "flame-thrower-ammo": {
         "order": "e",
         "icon": "graphics\/base\/graphics\/icons\/flame-thrower-ammo.png"
+    },
+    "flamethrower-turret": {
+        "order": "z-z-z",
+        "icon": "graphics\/base\/graphics\/icons\/flamethrower-turret.png"
     },
     "flying-robot-frame": {
         "order": "j",
@@ -475,6 +503,18 @@ items=
     "gate": {
         "order": "a-b",
         "icon": "graphics\/base\/graphics\/icons\/gate.png"
+    },
+    "getting-on-track": {
+        "order": "a-a",
+        "icon": "graphics\/base\/graphics\/achievement\/getting-on-track.png"
+    },
+    "getting-on-track-like-a-pro": {
+        "order": "c-a",
+        "icon": "graphics\/base\/graphics\/achievement\/getting-on-track-like-a-pro.png"
+    },
+    "golem": {
+        "order": "b-g",
+        "icon": "graphics\/base\/graphics\/achievement\/golem.png"
     },
     "green-asterisk": {
         "order": "b-b-b",
@@ -516,9 +556,17 @@ items=
         "order": "a-c",
         "icon": "graphics\/base\/graphics\/icons\/green-wire.png"
     },
+    "grenade": {
+        "order": "a-a",
+        "icon": "graphics\/base\/graphics\/icons\/grenade.png"
+    },
     "gun-turret": {
         "order": "b-a",
         "icon": "graphics\/base\/graphics\/icons\/gun-turret.png"
+    },
+    "hazard-concrete": {
+        "order": "b-b",
+        "icon": "graphics\/base\/graphics\/icons\/hazard-concrete.png"
     },
     "heavy-armor": {
         "order": "b",
@@ -531,6 +579,10 @@ items=
     "heavy-oil-cracking": {
         "order": "b-a",
         "icon": "graphics\/base\/graphics\/icons\/fluid\/heavy-oil-cracking.png"
+    },
+    "inserter": {
+        "order": "b",
+        "icon": "graphics\/base\/graphics\/icons\/inserter.png"
     },
     "iron-axe": {
         "order": "a-a",
@@ -545,7 +597,7 @@ items=
         "icon": "graphics\/base\/graphics\/icons\/iron-gear-wheel.png"
     },
     "iron-ore": {
-        "order": "a-b-b",
+        "order": "a-b-a",
         "icon": "graphics\/base\/graphics\/icons\/iron-ore.png"
     },
     "iron-plate": {
@@ -556,6 +608,22 @@ items=
         "order": "a",
         "icon": "graphics\/base\/graphics\/icons\/iron-stick.png"
     },
+    "iron-throne-1": {
+        "order": "d-e",
+        "icon": "graphics\/base\/graphics\/achievement\/iron-throne-1.png"
+    },
+    "iron-throne-2": {
+        "order": "d-e",
+        "icon": "graphics\/base\/graphics\/achievement\/iron-throne-2.png"
+    },
+    "iron-throne-3": {
+        "order": "d-e",
+        "icon": "graphics\/base\/graphics\/achievement\/iron-throne-3.png"
+    },
+    "it-stinks-and-they-dont-like-it": {
+        "order": "b-a",
+        "icon": "graphics\/base\/graphics\/achievement\/it-stinks-and-they-dont-like-it.png"
+    },
     "lab": {
         "order": "g",
         "icon": "graphics\/base\/graphics\/icons\/lab.png"
@@ -564,9 +632,21 @@ items=
         "order": "f",
         "icon": "graphics\/base\/graphics\/icons\/land-mine.png"
     },
+    "landfill": {
+        "order": "c-a",
+        "icon": "graphics\/base\/graphics\/icons\/landfill.png"
+    },
     "laser-turret": {
         "order": "b-b",
         "icon": "graphics\/base\/graphics\/icons\/laser-turret.png"
+    },
+    "lazy-bastard": {
+        "order": "f-a",
+        "icon": "graphics\/base\/graphics\/achievement\/lazy-bastard.png"
+    },
+    "light-armor": {
+        "order": "a",
+        "icon": "graphics\/base\/graphics\/icons\/light-armor.png"
     },
     "light-oil": {
         "order": "a-d",
@@ -575,6 +655,10 @@ items=
     "light-oil-cracking": {
         "order": "b-b",
         "icon": "graphics\/base\/graphics\/icons\/fluid\/light-oil-cracking.png"
+    },
+    "loader": {
+        "order": "d-a",
+        "icon": "graphics\/base\/graphics\/icons\/loader.png"
     },
     "logistic-chest-active-provider": {
         "order": "b-c",
@@ -591,6 +675,10 @@ items=
     "logistic-chest-storage": {
         "order": "b-c",
         "icon": "graphics\/base\/graphics\/icons\/logistic-chest-storage.png"
+    },
+    "logistic-network-embargo": {
+        "order": "f-d",
+        "icon": "graphics\/base\/graphics\/achievement\/logistic-network-embargo.png"
     },
     "logistic-robot": {
         "order": "a-a",
@@ -611,6 +699,18 @@ items=
     "market": {
         "order": "d-a-a",
         "icon": "graphics\/base\/graphics\/icons\/market.png"
+    },
+    "mass-production-1": {
+        "order": "d-b-a",
+        "icon": "graphics\/base\/graphics\/achievement\/mass-production-1.png"
+    },
+    "mass-production-2": {
+        "order": "d-b-b",
+        "icon": "graphics\/base\/graphics\/achievement\/mass-production-2.png"
+    },
+    "mass-production-3": {
+        "order": "d-b-c",
+        "icon": "graphics\/base\/graphics\/achievement\/mass-production-3.png"
     },
     "medium-biter": {
         "order": "b-b-b",
@@ -634,7 +734,7 @@ items=
     },
     "medium-spitter": {
         "order": "b-b-e",
-        "icon": "graphics\/base\/graphics\/icons\/creeper.png"
+        "icon": "graphics\/base\/graphics\/icons\/medium-spitter.png"
     },
     "medium-spitter-corpse": {
         "order": "c-b-b",
@@ -648,9 +748,21 @@ items=
         "order": "b-b-e",
         "icon": "graphics\/base\/graphics\/icons\/medium-worm.png"
     },
+    "minions": {
+        "order": "e-d",
+        "icon": "graphics\/base\/graphics\/achievement\/minions.png"
+    },
+    "modular-armor": {
+        "order": "c",
+        "icon": "graphics\/base\/graphics\/icons\/modular-armor.png"
+    },
     "night-vision-equipment": {
         "order": "f-a",
         "icon": "graphics\/base\/graphics\/icons\/night-vision-equipment.png"
+    },
+    "no-time-for-chitchat": {
+        "order": "f-e",
+        "icon": "graphics\/base\/graphics\/achievement\/no-time-for-chitchat.png"
     },
     "offshore-pump": {
         "order": "b-a",
@@ -664,6 +776,10 @@ items=
         "order": "b-f-b-c",
         "icon": "graphics\/base\/graphics\/icons\/orange-coral-mini.png"
     },
+    "personal-laser-defense-equipment": {
+        "order": "d-a",
+        "icon": "graphics\/base\/graphics\/icons\/personal-laser-defense-equipment.png"
+    },
     "personal-roboport-equipment": {
         "order": "e-a",
         "icon": "graphics\/base\/graphics\/icons\/personal-roboport-equipment.png"
@@ -672,9 +788,9 @@ items=
         "order": "a-e",
         "icon": "graphics\/base\/graphics\/icons\/fluid\/petroleum-gas.png"
     },
-    "piercing-bullet-magazine": {
+    "piercing-rounds-magazine": {
         "order": "a-b",
-        "icon": "graphics\/base\/graphics\/icons\/piercing-bullet-magazine.png"
+        "icon": "graphics\/base\/graphics\/icons\/piercing-rounds-magazine.png"
     },
     "piercing-shotgun-shell": {
         "order": "b-b",
@@ -716,6 +832,10 @@ items=
         "order": "e",
         "icon": "graphics\/base\/graphics\/icons\/power-armor-mk2.png"
     },
+    "power-switch": {
+        "order": "c-a",
+        "icon": "graphics\/base\/graphics\/icons\/power-switch.png"
+    },
     "processing-unit": {
         "order": "e",
         "icon": "graphics\/base\/graphics\/icons\/processing-unit.png"
@@ -736,9 +856,17 @@ items=
         "order": "b-b",
         "icon": "graphics\/base\/graphics\/icons\/pumpjack.png"
     },
+    "pyromaniac": {
+        "order": "e-b",
+        "icon": "graphics\/base\/graphics\/achievement\/pyromaniac.png"
+    },
     "radar": {
         "order": "d-a",
         "icon": "graphics\/base\/graphics\/icons\/radar.png"
+    },
+    "rail": {
+        "order": "a-a",
+        "icon": "graphics\/base\/graphics\/icons\/rail.png"
     },
     "rail-chain-signal": {
         "order": "a-e",
@@ -755,6 +883,10 @@ items=
     "railgun-dart": {
         "order": "c",
         "icon": "graphics\/base\/graphics\/icons\/railgun-ammo.png"
+    },
+    "raining-bullets": {
+        "order": "f-c",
+        "icon": "graphics\/base\/graphics\/achievement\/raining-bullets.png"
     },
     "raw-fish": {
         "order": "f-e-a",
@@ -811,6 +943,10 @@ items=
     "root-B": {
         "order": "b-h-b",
         "icon": "graphics\/base\/graphics\/icons\/root-b.png"
+    },
+    "run-forest-run": {
+        "order": "e-c",
+        "icon": "graphics\/base\/graphics\/achievement\/run-forest-run.png"
     },
     "satellite": {
         "order": "o",
@@ -900,13 +1036,101 @@ items=
         "order": "c-",
         "icon": "graphics\/base\/graphics\/icons\/signal\/signal_F.png"
     },
+    "signal-G": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_G.png"
+    },
+    "signal-H": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_H.png"
+    },
+    "signal-I": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_I.png"
+    },
+    "signal-J": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_J.png"
+    },
+    "signal-K": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_K.png"
+    },
+    "signal-L": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_L.png"
+    },
+    "signal-M": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_M.png"
+    },
+    "signal-N": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_N.png"
+    },
+    "signal-O": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_O.png"
+    },
+    "signal-P": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_P.png"
+    },
+    "signal-Q": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_Q.png"
+    },
+    "signal-R": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_R.png"
+    },
+    "signal-S": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_S.png"
+    },
+    "signal-T": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_T.png"
+    },
+    "signal-U": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_U.png"
+    },
+    "signal-V": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_V.png"
+    },
+    "signal-W": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_W.png"
+    },
+    "signal-X": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_X.png"
+    },
+    "signal-Y": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_Y.png"
+    },
+    "signal-Z": {
+        "order": "c-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_Z.png"
+    },
     "signal-anything": {
         "order": "a-",
         "icon": "graphics\/base\/graphics\/icons\/signal\/signal_anything.png"
     },
+    "signal-black": {
+        "order": "d-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_black.png"
+    },
     "signal-blue": {
         "order": "d-",
         "icon": "graphics\/base\/graphics\/icons\/signal\/signal_blue.png"
+    },
+    "signal-cyan": {
+        "order": "d-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_cyan.png"
     },
     "signal-each": {
         "order": "a-",
@@ -920,9 +1144,21 @@ items=
         "order": "d-",
         "icon": "graphics\/base\/graphics\/icons\/signal\/signal_green.png"
     },
+    "signal-grey": {
+        "order": "d-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_grey.png"
+    },
+    "signal-pink": {
+        "order": "d-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_pink.png"
+    },
     "signal-red": {
         "order": "d-",
         "icon": "graphics\/base\/graphics\/icons\/signal\/signal_red.png"
+    },
+    "signal-white": {
+        "order": "d-",
+        "icon": "graphics\/base\/graphics\/icons\/signal\/signal_white.png"
     },
     "signal-yellow": {
         "order": "d-",
@@ -978,7 +1214,7 @@ items=
     },
     "small-spitter": {
         "order": "b-b-d",
-        "icon": "graphics\/base\/graphics\/icons\/creeper.png"
+        "icon": "graphics\/base\/graphics\/icons\/small-spitter.png"
     },
     "small-spitter-corpse": {
         "order": "c-b-a",
@@ -992,13 +1228,13 @@ items=
         "order": "b-b-d",
         "icon": "graphics\/base\/graphics\/icons\/small-worm.png"
     },
-    "smart-chest": {
+    "smoke-me-a-kipper-i-will-be-back-for-breakfast": {
         "order": "a-d",
-        "icon": "graphics\/base\/graphics\/icons\/smart-chest.png"
+        "icon": "graphics\/base\/graphics\/achievement\/smoke-me-a-kipper-i-will-be-back-for-breakfast.png"
     },
-    "smart-inserter": {
-        "order": "f-e",
-        "icon": "graphics\/base\/graphics\/icons\/smart-inserter.png"
+    "so-long-and-thanks-for-all-the-fish": {
+        "order": "g-a",
+        "icon": "graphics\/base\/graphics\/achievement\/so-long-and-thanks-for-all-the-fish.png"
     },
     "solar-panel": {
         "order": "d-a",
@@ -1007,6 +1243,10 @@ items=
     "solar-panel-equipment": {
         "order": "a-a",
         "icon": "graphics\/base\/graphics\/icons\/solar-panel-equipment.png"
+    },
+    "solaris": {
+        "order": "d-e",
+        "icon": "graphics\/base\/graphics\/achievement\/solaris.png"
     },
     "solid-fuel": {
         "order": "c",
@@ -1044,9 +1284,29 @@ items=
         "order": "c-c",
         "icon": "graphics\/base\/graphics\/icons\/biter-spawner-corpse.png"
     },
+    "splitter": {
+        "order": "c-a",
+        "icon": "graphics\/base\/graphics\/icons\/splitter.png"
+    },
+    "stack-filter-inserter": {
+        "order": "g",
+        "icon": "graphics\/base\/graphics\/icons\/stack-filter-inserter.png"
+    },
+    "stack-inserter": {
+        "order": "f",
+        "icon": "graphics\/base\/graphics\/icons\/stack-inserter.png"
+    },
+    "steam-all-the-way": {
+        "order": "f-b",
+        "icon": "graphics\/base\/graphics\/achievement\/steam-all-the-way.png"
+    },
     "steam-engine": {
         "order": "b-b",
         "icon": "graphics\/base\/graphics\/icons\/steam-engine.png"
+    },
+    "steamrolled": {
+        "order": "e-a",
+        "icon": "graphics\/base\/graphics\/achievement\/steamrolled.png"
     },
     "steel-axe": {
         "order": "a-b",
@@ -1065,7 +1325,7 @@ items=
         "icon": "graphics\/base\/graphics\/icons\/steel-plate.png"
     },
     "stone": {
-        "order": "a-b-d",
+        "order": "a-b-a",
         "icon": "graphics\/base\/graphics\/icons\/stone.png"
     },
     "stone-brick": {
@@ -1087,10 +1347,6 @@ items=
     "storage-tank": {
         "order": "b-a",
         "icon": "graphics\/base\/graphics\/icons\/storage-tank.png"
-    },
-    "straight-rail": {
-        "order": "a-a",
-        "icon": "graphics\/base\/graphics\/icons\/straight-rail.png"
     },
     "straight-rail-remnants": {
         "order": "d-b-a",
@@ -1124,9 +1380,25 @@ items=
         "order": "a-b",
         "icon": "graphics\/base\/graphics\/icons\/submachine-gun.png"
     },
+    "tech-maniac": {
+        "order": "a-c",
+        "icon": "graphics\/base\/graphics\/achievement\/tech-maniac.png"
+    },
+    "there-is-no-spoon": {
+        "order": "f-f",
+        "icon": "graphics\/base\/graphics\/achievement\/there-is-no-spoon.png"
+    },
     "train-stop": {
         "order": "a-c",
         "icon": "graphics\/base\/graphics\/icons\/train-stop.png"
+    },
+    "trans-factorio-express": {
+        "order": "b-e",
+        "icon": "graphics\/base\/graphics\/achievement\/trans-factorio-express.png"
+    },
+    "transport-belt": {
+        "order": "a-a",
+        "icon": "graphics\/base\/graphics\/icons\/transport-belt.png"
     },
     "tree-01": {
         "order": "a-a-a",
@@ -1224,6 +1496,10 @@ items=
         "order": "d-b-i",
         "icon": "graphics\/base\/graphics\/icons\/tree-09-stump.png"
     },
+    "underground-belt": {
+        "order": "b-a",
+        "icon": "graphics\/base\/graphics\/icons\/underground-belt.png"
+    },
     "vehicle-machine-gun": {
         "order": "a-b",
         "icon": "graphics\/base\/graphics\/icons\/submachine-gun.png"
@@ -1231,6 +1507,10 @@ items=
     "wall-remnants": {
         "order": "d-c",
         "icon": "graphics\/base\/graphics\/icons\/wall-remnants.png"
+    },
+    "watch-your-step": {
+        "order": "b-f",
+        "icon": "graphics\/base\/graphics\/achievement\/watch-your-step.png"
     },
     "water": {
         "order": "a-a",
@@ -1243,5 +1523,13 @@ items=
     "wooden-chest": {
         "order": "a-a",
         "icon": "graphics\/base\/graphics\/icons\/wooden-chest.png"
+    },
+    "you-are-doing-it-right": {
+        "order": "b-b-b",
+        "icon": "graphics\/base\/graphics\/achievement\/you-are-doing-it-right.png"
+    },
+    "you-have-got-a-package": {
+        "order": "b-d-a",
+        "icon": "graphics\/base\/graphics\/achievement\/you-have-got-a-package.png"
     }
 }

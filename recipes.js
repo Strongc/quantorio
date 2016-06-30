@@ -1,5 +1,15 @@
 recipes=
 {
+    "accumulator": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 10,
+        "ingredients": {
+            "iron-plate": 2,
+            "battery": 5
+        },
+        "ingredient_count": 2
+    },
     "advanced-circuit": {
         "result_count": 1,
         "category": "crafting",
@@ -90,131 +100,6 @@ recipes=
         },
         "ingredient_count": 2
     },
-    "basic-accumulator": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 10,
-        "ingredients": {
-            "iron-plate": 2,
-            "battery": 5
-        },
-        "ingredient_count": 2
-    },
-    "basic-armor": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 3,
-        "ingredients": {
-            "iron-plate": 40
-        },
-        "ingredient_count": 1
-    },
-    "basic-beacon": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 15,
-        "ingredients": {
-            "electronic-circuit": 20,
-            "advanced-circuit": 20,
-            "steel-plate": 10,
-            "copper-cable": 10
-        },
-        "ingredient_count": 4
-    },
-    "basic-bullet-magazine": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 2,
-        "ingredients": {
-            "iron-plate": 2
-        },
-        "ingredient_count": 1
-    },
-    "basic-electric-discharge-defense-equipment": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 10,
-        "ingredients": {
-            "processing-unit": 5,
-            "steel-plate": 20,
-            "laser-turret": 10
-        },
-        "ingredient_count": 3
-    },
-    "basic-electric-discharge-defense-remote": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 0.5,
-        "ingredients": {
-            "electronic-circuit": 1
-        },
-        "ingredient_count": 1
-    },
-    "basic-exoskeleton-equipment": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 10,
-        "ingredients": {
-            "processing-unit": 10,
-            "electric-engine-unit": 30,
-            "steel-plate": 20
-        },
-        "ingredient_count": 3
-    },
-    "basic-grenade": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 8,
-        "ingredients": {
-            "iron-plate": 5,
-            "coal": 10
-        },
-        "ingredient_count": 2
-    },
-    "basic-inserter": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 0.5,
-        "ingredients": {
-            "electronic-circuit": 1,
-            "iron-gear-wheel": 1,
-            "iron-plate": 1
-        },
-        "ingredient_count": 3
-    },
-    "basic-laser-defense-equipment": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 10,
-        "ingredients": {
-            "processing-unit": 1,
-            "steel-plate": 5,
-            "laser-turret": 5
-        },
-        "ingredient_count": 3
-    },
-    "basic-mining-drill": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 2,
-        "ingredients": {
-            "electronic-circuit": 3,
-            "iron-gear-wheel": 5,
-            "iron-plate": 10
-        },
-        "ingredient_count": 3
-    },
-    "basic-modular-armor": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 15,
-        "ingredients": {
-            "advanced-circuit": 30,
-            "processing-unit": 5,
-            "steel-plate": 50
-        },
-        "ingredient_count": 3
-    },
     "basic-oil-processing": {
         "result_count": 1,
         "category": "oil-processing",
@@ -240,37 +125,6 @@ recipes=
             "crude-oil": 10
         },
         "ingredient_count": 1
-    },
-    "basic-splitter": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 1,
-        "ingredients": {
-            "electronic-circuit": 5,
-            "iron-plate": 5,
-            "basic-transport-belt": 4
-        },
-        "ingredient_count": 3
-    },
-    "basic-transport-belt": {
-        "result_count": 2,
-        "category": "crafting",
-        "energy_required": 0.5,
-        "ingredients": {
-            "iron-plate": 1,
-            "iron-gear-wheel": 1
-        },
-        "ingredient_count": 2
-    },
-    "basic-transport-belt-to-ground": {
-        "result_count": 2,
-        "category": "crafting",
-        "energy_required": 1,
-        "ingredients": {
-            "iron-plate": 10,
-            "basic-transport-belt": 5
-        },
-        "ingredient_count": 2
     },
     "battery": {
         "result_count": 1,
@@ -303,6 +157,18 @@ recipes=
         },
         "ingredient_count": 2
     },
+    "beacon": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 15,
+        "ingredients": {
+            "electronic-circuit": 20,
+            "advanced-circuit": 20,
+            "steel-plate": 10,
+            "copper-cable": 10
+        },
+        "ingredient_count": 4
+    },
     "big-electric-pole": {
         "result_count": 1,
         "category": "crafting",
@@ -319,6 +185,15 @@ recipes=
         "energy_required": 1,
         "ingredients": {
             "advanced-circuit": 1
+        },
+        "ingredient_count": 1
+    },
+    "blueprint-book": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 5,
+        "ingredients": {
+            "advanced-circuit": 15
         },
         "ingredient_count": 1
     },
@@ -398,6 +273,17 @@ recipes=
         },
         "ingredient_count": 4
     },
+    "cluster-grenade": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 8,
+        "ingredients": {
+            "grenade": 7,
+            "explosives": 5,
+            "steel-plate": 5
+        },
+        "ingredient_count": 3
+    },
     "combat-shotgun": {
         "result_count": 1,
         "category": "crafting",
@@ -459,17 +345,6 @@ recipes=
         },
         "ingredient_count": 1
     },
-    "curved-rail": {
-        "result_count": 2,
-        "category": "crafting",
-        "energy_required": 0.5,
-        "ingredients": {
-            "stone": 4,
-            "iron-stick": 4,
-            "steel-plate": 4
-        },
-        "ingredient_count": 3
-    },
     "decider-combinator": {
         "result_count": 1,
         "category": "crafting",
@@ -494,7 +369,7 @@ recipes=
         "category": "crafting",
         "energy_required": 8,
         "ingredients": {
-            "piercing-bullet-magazine": 1,
+            "piercing-rounds-magazine": 1,
             "electronic-circuit": 2,
             "iron-gear-wheel": 3
         },
@@ -520,6 +395,26 @@ recipes=
             "steel-plate": 30
         },
         "ingredient_count": 3
+    },
+    "discharge-defense-equipment": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 10,
+        "ingredients": {
+            "processing-unit": 5,
+            "steel-plate": 20,
+            "laser-turret": 10
+        },
+        "ingredient_count": 3
+    },
+    "discharge-defense-remote": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 0.5,
+        "ingredients": {
+            "electronic-circuit": 1
+        },
+        "ingredient_count": 1
     },
     "distractor-capsule": {
         "result_count": 1,
@@ -583,6 +478,17 @@ recipes=
             "steel-plate": 15,
             "advanced-circuit": 5,
             "stone-brick": 10
+        },
+        "ingredient_count": 3
+    },
+    "electric-mining-drill": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 2,
+        "ingredients": {
+            "electronic-circuit": 3,
+            "iron-gear-wheel": 5,
+            "iron-plate": 10
         },
         "ingredient_count": 3
     },
@@ -658,6 +564,17 @@ recipes=
         },
         "ingredient_count": 3
     },
+    "exoskeleton-equipment": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 10,
+        "ingredients": {
+            "processing-unit": 10,
+            "electric-engine-unit": 30,
+            "steel-plate": 20
+        },
+        "ingredient_count": 3
+    },
     "explosive-cannon-shell": {
         "result_count": 1,
         "category": "crafting",
@@ -690,6 +607,16 @@ recipes=
         },
         "ingredient_count": 3
     },
+    "express-loader": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 10,
+        "ingredients": {
+            "express-transport-belt": 5,
+            "fast-loader": 1
+        },
+        "ingredient_count": 2
+    },
     "express-splitter": {
         "result_count": 1,
         "category": "crafting-with-fluid",
@@ -713,15 +640,16 @@ recipes=
         },
         "ingredient_count": 3
     },
-    "express-transport-belt-to-ground": {
+    "express-underground-belt": {
         "result_count": 2,
-        "category": "crafting",
+        "category": "crafting-with-fluid",
         "energy_required": 0.5,
         "ingredients": {
             "iron-gear-wheel": 40,
-            "fast-transport-belt-to-ground": 2
+            "fast-underground-belt": 2,
+            "lubricant": 4
         },
-        "ingredient_count": 2
+        "ingredient_count": 3
     },
     "fast-inserter": {
         "result_count": 1,
@@ -730,16 +658,26 @@ recipes=
         "ingredients": {
             "electronic-circuit": 2,
             "iron-plate": 2,
-            "basic-inserter": 1
+            "inserter": 1
         },
         "ingredient_count": 3
+    },
+    "fast-loader": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 3,
+        "ingredients": {
+            "fast-transport-belt": 5,
+            "loader": 1
+        },
+        "ingredient_count": 2
     },
     "fast-splitter": {
         "result_count": 1,
         "category": "crafting",
         "energy_required": 2,
         "ingredients": {
-            "basic-splitter": 1,
+            "splitter": 1,
             "iron-gear-wheel": 10,
             "electronic-circuit": 10
         },
@@ -751,17 +689,17 @@ recipes=
         "energy_required": 0.5,
         "ingredients": {
             "iron-gear-wheel": 5,
-            "basic-transport-belt": 1
+            "transport-belt": 1
         },
         "ingredient_count": 2
     },
-    "fast-transport-belt-to-ground": {
+    "fast-underground-belt": {
         "result_count": 2,
         "category": "crafting",
         "energy_required": 0.5,
         "ingredients": {
             "iron-gear-wheel": 20,
-            "basic-transport-belt-to-ground": 2
+            "underground-belt": 2
         },
         "ingredient_count": 2
     },
@@ -775,6 +713,25 @@ recipes=
         },
         "ingredient_count": 2,
         "type": "item"
+    },
+    "filter-inserter": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 0.5,
+        "ingredients": {
+            "fast-inserter": 1,
+            "electronic-circuit": 4
+        },
+        "ingredient_count": 2
+    },
+    "firearm-magazine": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 2,
+        "ingredients": {
+            "iron-plate": 2
+        },
+        "ingredient_count": 1
     },
     "flame-thrower": {
         "result_count": 1,
@@ -796,6 +753,18 @@ recipes=
             "heavy-oil": 2.5
         },
         "ingredient_count": 3
+    },
+    "flamethrower-turret": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 20,
+        "ingredients": {
+            "steel-plate": 30,
+            "iron-gear-wheel": 15,
+            "pipe": 10,
+            "engine-unit": 5
+        },
+        "ingredient_count": 4
     },
     "flying-robot-frame": {
         "result_count": 1,
@@ -840,6 +809,16 @@ recipes=
         },
         "ingredient_count": 2
     },
+    "grenade": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 8,
+        "ingredients": {
+            "iron-plate": 5,
+            "coal": 10
+        },
+        "ingredient_count": 2
+    },
     "gun-turret": {
         "result_count": 1,
         "category": "crafting",
@@ -850,6 +829,15 @@ recipes=
             "iron-plate": 20
         },
         "ingredient_count": 3
+    },
+    "hazard-concrete": {
+        "result_count": 10,
+        "category": "crafting",
+        "energy_required": 0.25,
+        "ingredients": {
+            "concrete": 10
+        },
+        "ingredient_count": 1
     },
     "heavy-armor": {
         "result_count": 1,
@@ -871,6 +859,17 @@ recipes=
         },
         "ingredient_count": 2,
         "type": "fluid"
+    },
+    "inserter": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 0.5,
+        "ingredients": {
+            "electronic-circuit": 1,
+            "iron-gear-wheel": 1,
+            "iron-plate": 1
+        },
+        "ingredient_count": 3
     },
     "iron-axe": {
         "result_count": 1,
@@ -925,7 +924,7 @@ recipes=
         "ingredients": {
             "electronic-circuit": 10,
             "iron-gear-wheel": 10,
-            "basic-transport-belt": 4
+            "transport-belt": 4
         },
         "ingredient_count": 3
     },
@@ -939,6 +938,15 @@ recipes=
         },
         "ingredient_count": 2
     },
+    "landfill": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 0.5,
+        "ingredients": {
+            "stone": 20
+        },
+        "ingredient_count": 1
+    },
     "laser-turret": {
         "result_count": 1,
         "category": "crafting",
@@ -949,6 +957,15 @@ recipes=
             "battery": 12
         },
         "ingredient_count": 3
+    },
+    "light-armor": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 3,
+        "ingredients": {
+            "iron-plate": 40
+        },
+        "ingredient_count": 1
     },
     "light-oil-cracking": {
         "result_count": 2,
@@ -961,45 +978,62 @@ recipes=
         "ingredient_count": 2,
         "type": "fluid"
     },
+    "loader": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 1,
+        "ingredients": {
+            "inserter": 5,
+            "electronic-circuit": 5,
+            "iron-gear-wheel": 5,
+            "iron-plate": 5,
+            "transport-belt": 5
+        },
+        "ingredient_count": 5
+    },
     "logistic-chest-active-provider": {
         "result_count": 1,
         "category": "crafting",
         "energy_required": 0.5,
         "ingredients": {
-            "smart-chest": 1,
+            "steel-chest": 1,
+            "electronic-circuit": 3,
             "advanced-circuit": 1
         },
-        "ingredient_count": 2
+        "ingredient_count": 3
     },
     "logistic-chest-passive-provider": {
         "result_count": 1,
         "category": "crafting",
         "energy_required": 0.5,
         "ingredients": {
-            "smart-chest": 1,
+            "steel-chest": 1,
+            "electronic-circuit": 3,
             "advanced-circuit": 1
         },
-        "ingredient_count": 2
+        "ingredient_count": 3
     },
     "logistic-chest-requester": {
         "result_count": 1,
         "category": "crafting",
         "energy_required": 0.5,
         "ingredients": {
-            "smart-chest": 1,
+            "steel-chest": 1,
+            "electronic-circuit": 3,
             "advanced-circuit": 1
         },
-        "ingredient_count": 2
+        "ingredient_count": 3
     },
     "logistic-chest-storage": {
         "result_count": 1,
         "category": "crafting",
         "energy_required": 0.5,
         "ingredients": {
-            "smart-chest": 1,
+            "steel-chest": 1,
+            "electronic-circuit": 3,
             "advanced-circuit": 1
         },
-        "ingredient_count": 2
+        "ingredient_count": 3
     },
     "logistic-robot": {
         "result_count": 1,
@@ -1018,7 +1052,7 @@ recipes=
         "ingredients": {
             "iron-gear-wheel": 1,
             "iron-plate": 1,
-            "basic-inserter": 1
+            "inserter": 1
         },
         "ingredient_count": 3
     },
@@ -1052,6 +1086,17 @@ recipes=
             "copper-plate": 2
         },
         "ingredient_count": 2
+    },
+    "modular-armor": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 15,
+        "ingredients": {
+            "advanced-circuit": 30,
+            "processing-unit": 5,
+            "steel-plate": 50
+        },
+        "ingredient_count": 3
     },
     "night-vision-equipment": {
         "result_count": 1,
@@ -1087,6 +1132,17 @@ recipes=
         },
         "ingredient_count": 5
     },
+    "personal-laser-defense-equipment": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 10,
+        "ingredients": {
+            "processing-unit": 1,
+            "steel-plate": 5,
+            "laser-turret": 5
+        },
+        "ingredient_count": 3
+    },
     "personal-roboport-equipment": {
         "result_count": 1,
         "category": "crafting",
@@ -1099,7 +1155,7 @@ recipes=
         },
         "ingredient_count": 4
     },
-    "piercing-bullet-magazine": {
+    "piercing-rounds-magazine": {
         "result_count": 1,
         "category": "crafting",
         "energy_required": 3,
@@ -1206,6 +1262,17 @@ recipes=
         },
         "ingredient_count": 5
     },
+    "power-switch": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 2,
+        "ingredients": {
+            "iron-plate": 5,
+            "copper-cable": 5,
+            "electronic-circuit": 2
+        },
+        "ingredient_count": 3
+    },
     "processing-unit": {
         "result_count": 1,
         "category": "crafting-with-fluid",
@@ -1270,6 +1337,17 @@ recipes=
             "electronic-circuit": 5,
             "iron-gear-wheel": 5,
             "iron-plate": 10
+        },
+        "ingredient_count": 3
+    },
+    "rail": {
+        "result_count": 2,
+        "category": "crafting",
+        "energy_required": 0.5,
+        "ingredients": {
+            "stone": 1,
+            "iron-stick": 1,
+            "steel-plate": 1
         },
         "ingredient_count": 3
     },
@@ -1418,7 +1496,7 @@ recipes=
         "ingredients": {
             "low-density-structure": 100,
             "solar-panel": 100,
-            "basic-accumulator": 100,
+            "accumulator": 100,
             "radar": 5,
             "processing-unit": 100,
             "rocket-fuel": 50
@@ -1440,8 +1518,8 @@ recipes=
         "category": "crafting",
         "energy_required": 6,
         "ingredients": {
-            "basic-inserter": 1,
-            "basic-transport-belt": 1
+            "inserter": 1,
+            "transport-belt": 1
         },
         "ingredient_count": 2
     },
@@ -1452,7 +1530,7 @@ recipes=
         "ingredients": {
             "battery": 1,
             "advanced-circuit": 1,
-            "smart-inserter": 1,
+            "filter-inserter": 1,
             "steel-plate": 1
         },
         "ingredient_count": 4
@@ -1533,26 +1611,6 @@ recipes=
             "pipe": 1
         },
         "ingredient_count": 3
-    },
-    "smart-chest": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 0.5,
-        "ingredients": {
-            "steel-chest": 1,
-            "electronic-circuit": 3
-        },
-        "ingredient_count": 2
-    },
-    "smart-inserter": {
-        "result_count": 1,
-        "category": "crafting",
-        "energy_required": 0.5,
-        "ingredients": {
-            "fast-inserter": 1,
-            "electronic-circuit": 4
-        },
-        "ingredient_count": 2
     },
     "solar-panel": {
         "result_count": 1,
@@ -1636,6 +1694,39 @@ recipes=
             "advanced-circuit": 5,
             "processing-unit": 5,
             "alien-artifact": 1
+        },
+        "ingredient_count": 4
+    },
+    "splitter": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 1,
+        "ingredients": {
+            "electronic-circuit": 5,
+            "iron-plate": 5,
+            "transport-belt": 4
+        },
+        "ingredient_count": 3
+    },
+    "stack-filter-inserter": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 0.5,
+        "ingredients": {
+            "stack-inserter": 1,
+            "electronic-circuit": 5
+        },
+        "ingredient_count": 2
+    },
+    "stack-inserter": {
+        "result_count": 1,
+        "category": "crafting",
+        "energy_required": 0.5,
+        "ingredients": {
+            "iron-gear-wheel": 15,
+            "electronic-circuit": 15,
+            "advanced-circuit": 1,
+            "fast-inserter": 1
         },
         "ingredient_count": 4
     },
@@ -1725,17 +1816,6 @@ recipes=
         },
         "ingredient_count": 2
     },
-    "straight-rail": {
-        "result_count": 2,
-        "category": "crafting",
-        "energy_required": 0.5,
-        "ingredients": {
-            "stone": 1,
-            "iron-stick": 1,
-            "steel-plate": 1
-        },
-        "ingredient_count": 3
-    },
     "submachine-gun": {
         "result_count": 1,
         "category": "crafting",
@@ -1803,6 +1883,26 @@ recipes=
             "steel-plate": 3
         },
         "ingredient_count": 3
+    },
+    "transport-belt": {
+        "result_count": 2,
+        "category": "crafting",
+        "energy_required": 0.5,
+        "ingredients": {
+            "iron-plate": 1,
+            "iron-gear-wheel": 1
+        },
+        "ingredient_count": 2
+    },
+    "underground-belt": {
+        "result_count": 2,
+        "category": "crafting",
+        "energy_required": 1,
+        "ingredients": {
+            "iron-plate": 10,
+            "transport-belt": 5
+        },
+        "ingredient_count": 2
     },
     "wood": {
         "result_count": 2,

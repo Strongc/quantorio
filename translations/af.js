@@ -1,5 +1,4 @@
 {
-    "basic-transport-belt-to-ground": "Ondergrondse Gordel",
     "big-electric-pole": "Groot Elektriese Paal",
     "big-remnants": "Groot Oorblyfsels",
     "big-worm-turret": "Groot Wurm",
@@ -16,7 +15,6 @@
     "distractor": "Afleier",
     "dry-hairy-tree": "Droë Harige Boom",
     "dry-tree": "Droog Boom",
-    "fast-transport-belt-to-ground": "Vinnige Ondergrondse Gordel",
     "fish": "Vis",
     "gun-turret": "Gewer Toring",
     "iron-ore": "Ystererts",

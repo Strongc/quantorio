@@ -30,17 +30,6 @@ machines=
         },
         "energy_usage": 210
     },
-    "basic-mining-drill": {
-        "type": "mining-drill",
-        "crafting_speed": 1,
-        "mining_speed": 0.5,
-        "mining_power": 3,
-        "energy_source": {
-            "emissions": 0.1,
-            "type": "electric"
-        },
-        "energy_usage": 90
-    },
     "burner-mining-drill": {
         "type": "mining-drill",
         "crafting_speed": 1,
@@ -71,6 +60,17 @@ machines=
             "type": "electric"
         },
         "energy_usage": 180
+    },
+    "electric-mining-drill": {
+        "type": "mining-drill",
+        "crafting_speed": 1,
+        "mining_speed": 0.5,
+        "mining_power": 3,
+        "energy_source": {
+            "emissions": 0.1,
+            "type": "electric"
+        },
+        "energy_usage": 90
     },
     "lab": {
         "type": "lab",

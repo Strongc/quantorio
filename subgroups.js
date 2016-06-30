@@ -1,21 +1,21 @@
 subgroups=
 {
     "ammo": {
-        "basic-bullet-magazine": true,
         "cannon-shell": true,
         "explosive-cannon-shell": true,
         "explosive-rocket": true,
+        "firearm-magazine": true,
         "flame-thrower-ammo": true,
-        "piercing-bullet-magazine": true,
+        "piercing-rounds-magazine": true,
         "piercing-shotgun-shell": true,
         "railgun-dart": true,
         "rocket": true,
         "shotgun-shell": true
     },
     "armor": {
-        "basic-armor": true,
-        "basic-modular-armor": true,
         "heavy-armor": true,
+        "light-armor": true,
+        "modular-armor": true,
         "power-armor": true,
         "power-armor-mk2": true
     },
@@ -26,25 +26,29 @@ subgroups=
         "fill-crude-oil-barrel": true
     },
     "belt": {
-        "basic-splitter": true,
-        "basic-transport-belt": true,
-        "basic-transport-belt-to-ground": true,
+        "express-loader": true,
         "express-splitter": true,
         "express-transport-belt": true,
-        "express-transport-belt-to-ground": true,
+        "express-underground-belt": true,
+        "fast-loader": true,
         "fast-splitter": true,
         "fast-transport-belt": true,
-        "fast-transport-belt-to-ground": true
+        "fast-underground-belt": true,
+        "loader": true,
+        "splitter": true,
+        "transport-belt": true,
+        "underground-belt": true
     },
     "capsule": {
-        "basic-electric-discharge-defense-remote": true,
-        "basic-grenade": true,
+        "cluster-grenade": true,
         "defender": true,
         "defender-capsule": true,
         "destroyer": true,
         "destroyer-capsule": true,
+        "discharge-defense-remote": true,
         "distractor": true,
         "distractor-capsule": true,
+        "grenade": true,
         "poison-capsule": true,
         "slowdown-capsule": true
     },
@@ -54,6 +58,7 @@ subgroups=
         "copper-cable": true,
         "decider-combinator": true,
         "green-wire": true,
+        "power-switch": true,
         "red-wire": true
     },
     "corpses": {
@@ -77,6 +82,7 @@ subgroups=
     },
     "defensive-structure": {
         "computer": true,
+        "flamethrower-turret": true,
         "gate": true,
         "gun-turret": true,
         "laser-turret": true,
@@ -102,7 +108,7 @@ subgroups=
         "spitter-spawner": true
     },
     "energy": {
-        "basic-accumulator": true,
+        "accumulator": true,
         "boiler": true,
         "small-lamp": true,
         "solar-panel": true,
@@ -118,21 +124,21 @@ subgroups=
         "substation": true
     },
     "equipment": {
-        "basic-electric-discharge-defense-equipment": true,
-        "basic-exoskeleton-equipment": true,
-        "basic-laser-defense-equipment": true,
         "battery-equipment": true,
         "battery-mk2-equipment": true,
+        "discharge-defense-equipment": true,
         "energy-shield-equipment": true,
         "energy-shield-mk2-equipment": true,
+        "exoskeleton-equipment": true,
         "fusion-reactor-equipment": true,
         "night-vision-equipment": true,
+        "personal-laser-defense-equipment": true,
         "personal-roboport-equipment": true,
         "solar-panel-equipment": true
     },
     "extraction-machine": {
-        "basic-mining-drill": true,
         "burner-mining-drill": true,
+        "electric-mining-drill": true,
         "offshore-pump": true,
         "pumpjack": true
     },
@@ -187,11 +193,13 @@ subgroups=
         "vehicle-machine-gun": true
     },
     "inserter": {
-        "basic-inserter": true,
         "burner-inserter": true,
         "fast-inserter": true,
+        "filter-inserter": true,
+        "inserter": true,
         "long-handed-inserter": true,
-        "smart-inserter": true
+        "stack-filter-inserter": true,
+        "stack-inserter": true
     },
     "intermediate-product": {
         "advanced-circuit": true,
@@ -220,7 +228,7 @@ subgroups=
         "roboport": true
     },
     "module": {
-        "basic-beacon": true,
+        "beacon": true,
         "effectivity-module": true,
         "effectivity-module-2": true,
         "effectivity-module-3": true,
@@ -290,17 +298,19 @@ subgroups=
     },
     "storage": {
         "iron-chest": true,
-        "smart-chest": true,
         "steel-chest": true,
         "storage-tank": true,
         "wooden-chest": true
     },
     "terrain": {
         "concrete": true,
+        "hazard-concrete": true,
+        "landfill": true,
         "stone-brick": true
     },
     "tool": {
         "blueprint": true,
+        "blueprint-book": true,
         "deconstruction-planner": true,
         "iron-axe": true,
         "repair-pack": true,
@@ -309,11 +319,10 @@ subgroups=
     "transport": {
         "car": true,
         "cargo-wagon": true,
-        "curved-rail": true,
         "diesel-locomotive": true,
+        "rail": true,
         "rail-chain-signal": true,
         "rail-signal": true,
-        "straight-rail": true,
         "tank": true,
         "train-stop": true
     },
@@ -341,9 +350,14 @@ subgroups=
         "tree-09-red": true
     },
     "virtual-signal-color": {
+        "signal-black": true,
         "signal-blue": true,
+        "signal-cyan": true,
         "signal-green": true,
+        "signal-grey": true,
+        "signal-pink": true,
         "signal-red": true,
+        "signal-white": true,
         "signal-yellow": true
     },
     "virtual-signal-letter": {
@@ -352,7 +366,27 @@ subgroups=
         "signal-C": true,
         "signal-D": true,
         "signal-E": true,
-        "signal-F": true
+        "signal-F": true,
+        "signal-G": true,
+        "signal-H": true,
+        "signal-I": true,
+        "signal-J": true,
+        "signal-K": true,
+        "signal-L": true,
+        "signal-M": true,
+        "signal-N": true,
+        "signal-O": true,
+        "signal-P": true,
+        "signal-Q": true,
+        "signal-R": true,
+        "signal-S": true,
+        "signal-T": true,
+        "signal-U": true,
+        "signal-V": true,
+        "signal-W": true,
+        "signal-X": true,
+        "signal-Y": true,
+        "signal-Z": true
     },
     "virtual-signal-number": {
         "signal-0": true,

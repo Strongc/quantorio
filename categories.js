@@ -9,7 +9,7 @@ categories=
     ],
     "basic-solid": [
         "burner-mining-drill",
-        "basic-mining-drill"
+        "electric-mining-drill"
     ],
     "chemistry": [
         "chemical-plant"

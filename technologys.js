@@ -3,7 +3,8 @@ technologys=
     "advanced-electronics": {
         "upgrade": false,
         "prerequisites": [
-            "electronics"
+            "electronics",
+            "plastics"
         ],
         "ingredients": {
             "science-pack-1": 1,
@@ -12,7 +13,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/advanced-electronics.png",
         "order": "a-d-b",
         "time": 15,
-        "count": 40,
+        "count": 100,
         "category": "lab"
     },
     "advanced-electronics-2": {
@@ -27,7 +28,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/advanced-electronics-2.png",
         "order": "a-d-c",
         "time": 30,
-        "count": 100,
+        "count": 200,
         "category": "lab"
     },
     "advanced-material-processing": {
@@ -42,7 +43,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/advanced-material-processing.png",
         "order": "c-c-a",
         "time": 30,
-        "count": 50,
+        "count": 75,
         "category": "lab"
     },
     "advanced-material-processing-2": {
@@ -58,7 +59,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/advanced-material-processing.png",
         "order": "c-c-b",
         "time": 30,
-        "count": 100,
+        "count": 150,
         "category": "lab"
     },
     "advanced-oil-processing": {
@@ -224,59 +225,6 @@ technologys=
         "count": 100,
         "category": "lab"
     },
-    "basic-electric-discharge-defense-equipment": {
-        "upgrade": false,
-        "prerequisites": [
-            "armor-making-3",
-            "alien-technology",
-            "laser-turrets"
-        ],
-        "ingredients": {
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1,
-            "alien-science-pack": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/basic-electric-discharge-defense-equipment.png",
-        "order": "g-o",
-        "time": 30,
-        "count": 100,
-        "category": "lab"
-    },
-    "basic-exoskeleton-equipment": {
-        "upgrade": false,
-        "prerequisites": [
-            "solar-panel-equipment",
-            "electric-engine"
-        ],
-        "ingredients": {
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/basic-exoskeleton-equipment.png",
-        "order": "g-h",
-        "time": 30,
-        "count": 50,
-        "category": "lab"
-    },
-    "basic-laser-defense-equipment": {
-        "upgrade": false,
-        "prerequisites": [
-            "armor-making-3",
-            "laser-turrets"
-        ],
-        "ingredients": {
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/basic-laser-defense-equipment.png",
-        "order": "g-m",
-        "time": 30,
-        "count": 100,
-        "category": "lab"
-    },
     "battery": {
         "upgrade": false,
         "prerequisites": [
@@ -289,7 +237,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/battery.png",
         "order": "b-c",
         "time": 25,
-        "count": 50,
+        "count": 150,
         "category": "lab"
     },
     "battery-equipment": {
@@ -591,6 +539,23 @@ technologys=
         "count": 500,
         "category": "lab"
     },
+    "character-logistic-slots-6": {
+        "upgrade": true,
+        "prerequisites": [
+            "character-logistic-slots-5"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1,
+            "alien-science-pack": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/character-logistic-slots.png",
+        "order": "c-k-e-f",
+        "time": 30,
+        "count": 1000,
+        "category": "lab"
+    },
     "character-logistic-trash-slots-1": {
         "upgrade": true,
         "prerequisites": [
@@ -634,7 +599,24 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/circuit-network.png",
         "order": "a-d-d",
         "time": 15,
-        "count": 50,
+        "count": 100,
+        "category": "lab"
+    },
+    "cluster-grenade": {
+        "upgrade": false,
+        "prerequisites": [
+            "military-4"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 2,
+            "science-pack-3": 1,
+            "alien-science-pack": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/cluster-grenade.png",
+        "order": "e-a-d",
+        "time": 45,
+        "count": 150,
         "category": "lab"
     },
     "combat-robot-damage-1": {
@@ -795,7 +777,26 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/construction-robotics.png",
         "order": "c-k-a",
         "time": 30,
-        "count": 50,
+        "count": 100,
+        "category": "lab"
+    },
+    "discharge-defense-equipment": {
+        "upgrade": false,
+        "prerequisites": [
+            "armor-making-3",
+            "alien-technology",
+            "laser-turrets"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1,
+            "alien-science-pack": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/discharge-defense-equipment.png",
+        "order": "g-o",
+        "time": 30,
+        "count": 100,
         "category": "lab"
     },
     "effect-transmission": {
@@ -876,7 +877,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/electric-energy-acumulators.png",
         "order": "c-e-a",
         "time": 30,
-        "count": 60,
+        "count": 120,
         "category": "lab"
     },
     "electric-energy-distribution-1": {
@@ -892,7 +893,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/electric-energy-distribution.png",
         "order": "c-e-b",
         "time": 30,
-        "count": 50,
+        "count": 120,
         "category": "lab"
     },
     "electric-energy-distribution-2": {
@@ -925,7 +926,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/electric-engine.png",
         "order": "b-b",
         "time": 25,
-        "count": 50,
+        "count": 100,
         "category": "lab"
     },
     "electronics": {
@@ -954,7 +955,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/energy-shield-equipment.png",
         "order": "g-e-a",
         "time": 15,
-        "count": 50,
+        "count": 150,
         "category": "lab"
     },
     "energy-shield-mk2-equipment": {
@@ -970,7 +971,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/energy-shield-mk2-equipment.png",
         "order": "g-e-b",
         "time": 30,
-        "count": 100,
+        "count": 200,
         "category": "lab"
     },
     "engine": {
@@ -986,6 +987,23 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/engine.png",
         "order": "b-a",
         "time": 15,
+        "count": 100,
+        "category": "lab"
+    },
+    "exoskeleton-equipment": {
+        "upgrade": false,
+        "prerequisites": [
+            "solar-panel-equipment",
+            "electric-engine"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/exoskeleton-equipment.png",
+        "order": "g-h",
+        "time": 30,
         "count": 50,
         "category": "lab"
     },
@@ -1017,7 +1035,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/explosives.png",
         "order": "a-e-d",
         "time": 15,
-        "count": 60,
+        "count": 100,
         "category": "lab"
     },
     "flame-thrower": {
@@ -1034,6 +1052,106 @@ technologys=
         "order": "e-c-b",
         "time": 15,
         "count": 20,
+        "category": "lab"
+    },
+    "flamethrower-damage-1": {
+        "upgrade": true,
+        "prerequisites": [
+            "military-3",
+            "flame-thrower"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/flamethrower-turret-damage.png",
+        "order": "e-o-p-a",
+        "time": 45,
+        "count": 75,
+        "category": "lab"
+    },
+    "flamethrower-damage-2": {
+        "upgrade": true,
+        "prerequisites": [
+            "flamethrower-damage-1"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/flamethrower-turret-damage.png",
+        "order": "e-o-p-b",
+        "time": 45,
+        "count": 125,
+        "category": "lab"
+    },
+    "flamethrower-damage-3": {
+        "upgrade": true,
+        "prerequisites": [
+            "flamethrower-damage-2"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/flamethrower-turret-damage.png",
+        "order": "e-o-p-c",
+        "time": 70,
+        "count": 250,
+        "category": "lab"
+    },
+    "flamethrower-damage-4": {
+        "upgrade": true,
+        "prerequisites": [
+            "flamethrower-damage-3"
+        ],
+        "ingredients": {
+            "alien-science-pack": 1,
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/flamethrower-turret-damage.png",
+        "order": "e-o-p-d",
+        "time": 80,
+        "count": 250,
+        "category": "lab"
+    },
+    "flamethrower-damage-5": {
+        "upgrade": true,
+        "prerequisites": [
+            "flamethrower-damage-4"
+        ],
+        "ingredients": {
+            "alien-science-pack": 1,
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/flamethrower-turret-damage.png",
+        "order": "e-o-p-e",
+        "time": 80,
+        "count": 400,
+        "category": "lab"
+    },
+    "flamethrower-damage-6": {
+        "upgrade": true,
+        "prerequisites": [
+            "flamethrower-damage-5"
+        ],
+        "ingredients": {
+            "alien-science-pack": 1,
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/flamethrower-turret-damage.png",
+        "order": "e-o-p-f",
+        "time": 80,
+        "count": 500,
         "category": "lab"
     },
     "flammables": {
@@ -1449,6 +1567,86 @@ technologys=
         "count": 100,
         "category": "lab"
     },
+    "grenade-damage-1": {
+        "upgrade": true,
+        "prerequisites": [
+            "military-2"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 2
+        },
+        "icon": "graphics\/base\/graphics\/technology\/grenade-damage.png",
+        "order": "e-n-a",
+        "time": 30,
+        "count": 50,
+        "category": "lab"
+    },
+    "grenade-damage-2": {
+        "upgrade": true,
+        "prerequisites": [
+            "grenade-damage-1"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/grenade-damage.png",
+        "order": "e-n-a",
+        "time": 45,
+        "count": 50,
+        "category": "lab"
+    },
+    "grenade-damage-3": {
+        "upgrade": true,
+        "prerequisites": [
+            "grenade-damage-2"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/grenade-damage.png",
+        "order": "e-n-a",
+        "time": 45,
+        "count": 150,
+        "category": "lab"
+    },
+    "grenade-damage-4": {
+        "upgrade": true,
+        "prerequisites": [
+            "grenade-damage-3"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/grenade-damage.png",
+        "order": "e-n-a",
+        "time": 45,
+        "count": 300,
+        "category": "lab"
+    },
+    "grenade-damage-5": {
+        "upgrade": true,
+        "prerequisites": [
+            "grenade-damage-4"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1,
+            "alien-science-pack": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/grenade-damage.png",
+        "order": "e-n-a",
+        "time": 45,
+        "count": 1000,
+        "category": "lab"
+    },
     "gun-turret-damage-1": {
         "upgrade": true,
         "prerequisites": [
@@ -1544,67 +1742,117 @@ technologys=
         "count": 300,
         "category": "lab"
     },
-    "inserter-stack-size-bonus-1": {
+    "inserter-capacity-bonus-1": {
         "upgrade": true,
         "prerequisites": [
-            "logistics"
+            "logistics-2"
         ],
         "ingredients": {
             "science-pack-1": 1,
             "science-pack-2": 1
         },
-        "icon": "graphics\/base\/graphics\/technology\/inserter-stack-size-bonus.png",
+        "icon": "graphics\/base\/graphics\/technology\/inserter-capacity.png",
         "order": "c-o-a",
         "time": 30,
-        "count": 50,
+        "count": 100,
         "category": "lab"
     },
-    "inserter-stack-size-bonus-2": {
+    "inserter-capacity-bonus-2": {
         "upgrade": true,
         "prerequisites": [
-            "inserter-stack-size-bonus-1"
+            "inserter-capacity-bonus-1"
         ],
         "ingredients": {
             "science-pack-1": 1,
             "science-pack-2": 1
         },
-        "icon": "graphics\/base\/graphics\/technology\/inserter-stack-size-bonus.png",
+        "icon": "graphics\/base\/graphics\/technology\/inserter-capacity.png",
         "order": "c-o-b",
         "time": 30,
-        "count": 60,
+        "count": 150,
         "category": "lab"
     },
-    "inserter-stack-size-bonus-3": {
+    "inserter-capacity-bonus-3": {
         "upgrade": true,
         "prerequisites": [
-            "inserter-stack-size-bonus-2"
+            "inserter-capacity-bonus-2"
         ],
         "ingredients": {
             "science-pack-1": 1,
             "science-pack-2": 1,
             "science-pack-3": 1
         },
-        "icon": "graphics\/base\/graphics\/technology\/inserter-stack-size-bonus.png",
+        "icon": "graphics\/base\/graphics\/technology\/inserter-capacity.png",
         "order": "c-o-c",
         "time": 30,
         "count": 200,
         "category": "lab"
     },
-    "inserter-stack-size-bonus-4": {
+    "inserter-capacity-bonus-4": {
         "upgrade": true,
         "prerequisites": [
-            "inserter-stack-size-bonus-3"
+            "inserter-capacity-bonus-3"
         ],
         "ingredients": {
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1,
-            "alien-science-pack": 2
+            "science-pack-1": 2,
+            "science-pack-2": 2,
+            "science-pack-3": 1
         },
-        "icon": "graphics\/base\/graphics\/technology\/inserter-stack-size-bonus.png",
+        "icon": "graphics\/base\/graphics\/technology\/inserter-capacity.png",
         "order": "c-o-d",
         "time": 30,
-        "count": 300,
+        "count": 200,
+        "category": "lab"
+    },
+    "inserter-capacity-bonus-5": {
+        "upgrade": true,
+        "prerequisites": [
+            "inserter-capacity-bonus-4"
+        ],
+        "ingredients": {
+            "science-pack-1": 2,
+            "science-pack-2": 2,
+            "science-pack-3": 2,
+            "alien-science-pack": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/inserter-capacity.png",
+        "order": "c-o-e",
+        "time": 30,
+        "count": 200,
+        "category": "lab"
+    },
+    "inserter-capacity-bonus-6": {
+        "upgrade": true,
+        "prerequisites": [
+            "inserter-capacity-bonus-5"
+        ],
+        "ingredients": {
+            "science-pack-1": 2,
+            "science-pack-2": 2,
+            "science-pack-3": 2,
+            "alien-science-pack": 2
+        },
+        "icon": "graphics\/base\/graphics\/technology\/inserter-capacity.png",
+        "order": "c-o-f",
+        "time": 30,
+        "count": 400,
+        "category": "lab"
+    },
+    "inserter-capacity-bonus-7": {
+        "upgrade": true,
+        "prerequisites": [
+            "inserter-capacity-bonus-6"
+        ],
+        "ingredients": {
+            "science-pack-1": 4,
+            "science-pack-2": 4,
+            "science-pack-3": 3,
+            "alien-science-pack": 2
+        },
+        "icon": "graphics\/base\/graphics\/technology\/inserter-capacity.png",
+        "order": "c-o-g",
+        "time": 30,
+        "count": 600,
         "category": "lab"
     },
     "land-mine": {
@@ -1623,6 +1871,19 @@ technologys=
         "count": 20,
         "category": "lab"
     },
+    "landfill": {
+        "upgrade": false,
+        "prerequisites": [],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/landfill.png",
+        "order": "b-d",
+        "time": 25,
+        "count": 50,
+        "category": "lab"
+    },
     "laser": {
         "upgrade": false,
         "prerequisites": [
@@ -1636,7 +1897,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/laser.png",
         "order": "a-h-b",
         "time": 30,
-        "count": 50,
+        "count": 150,
         "category": "lab"
     },
     "laser-turret-damage-1": {
@@ -1842,140 +2103,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/laser-turrets.png",
         "order": "a-j-b",
         "time": 30,
-        "count": 50,
-        "category": "lab"
-    },
-    "logistic-robot-speed-1": {
-        "upgrade": true,
-        "prerequisites": [
-            "logistic-robotics"
-        ],
-        "ingredients": {
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/logistic-robot-speed.png",
-        "order": "c-k-f-a",
-        "time": 30,
-        "count": 50,
-        "category": "lab"
-    },
-    "logistic-robot-speed-2": {
-        "upgrade": true,
-        "prerequisites": [
-            "logistic-robot-speed-1"
-        ],
-        "ingredients": {
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/logistic-robot-speed.png",
-        "order": "c-k-f-b",
-        "time": 30,
-        "count": 100,
-        "category": "lab"
-    },
-    "logistic-robot-speed-3": {
-        "upgrade": true,
-        "prerequisites": [
-            "logistic-robot-speed-2"
-        ],
-        "ingredients": {
-            "alien-science-pack": 1,
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/logistic-robot-speed.png",
-        "order": "c-k-f-c",
-        "time": 60,
-        "count": 150,
-        "category": "lab"
-    },
-    "logistic-robot-speed-4": {
-        "upgrade": true,
-        "prerequisites": [
-            "logistic-robot-speed-3"
-        ],
-        "ingredients": {
-            "alien-science-pack": 1,
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/logistic-robot-speed.png",
-        "order": "c-k-f-d",
-        "time": 60,
-        "count": 250,
-        "category": "lab"
-    },
-    "logistic-robot-speed-5": {
-        "upgrade": true,
-        "prerequisites": [
-            "logistic-robot-speed-4"
-        ],
-        "ingredients": {
-            "alien-science-pack": 1,
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/logistic-robot-speed.png",
-        "order": "c-k-f-e",
-        "time": 60,
-        "count": 500,
-        "category": "lab"
-    },
-    "logistic-robot-storage-1": {
-        "upgrade": true,
-        "prerequisites": [
-            "logistic-robotics"
-        ],
-        "ingredients": {
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/logistic-robot-storage.png",
-        "order": "c-k-g-a",
-        "time": 30,
         "count": 200,
-        "category": "lab"
-    },
-    "logistic-robot-storage-2": {
-        "upgrade": true,
-        "prerequisites": [
-            "logistic-robot-storage-1"
-        ],
-        "ingredients": {
-            "alien-science-pack": 1,
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/logistic-robot-storage.png",
-        "order": "c-k-g-b",
-        "time": 60,
-        "count": 300,
-        "category": "lab"
-    },
-    "logistic-robot-storage-3": {
-        "upgrade": true,
-        "prerequisites": [
-            "logistic-robot-storage-2"
-        ],
-        "ingredients": {
-            "alien-science-pack": 1,
-            "science-pack-1": 1,
-            "science-pack-2": 1,
-            "science-pack-3": 1
-        },
-        "icon": "graphics\/base\/graphics\/technology\/logistic-robot-storage.png",
-        "order": "c-k-g-c",
-        "time": 60,
-        "count": 450,
         "category": "lab"
     },
     "logistic-robotics": {
@@ -1991,7 +2119,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/logistic-robotics.png",
         "order": "c-k-c",
         "time": 30,
-        "count": 50,
+        "count": 150,
         "category": "lab"
     },
     "logistic-system": {
@@ -2034,7 +2162,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/logistics.png",
         "order": "a-f-b",
         "time": 30,
-        "count": 40,
+        "count": 100,
         "category": "lab"
     },
     "logistics-3": {
@@ -2051,7 +2179,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/logistics.png",
         "order": "a-f-c",
         "time": 15,
-        "count": 100,
+        "count": 200,
         "category": "lab"
     },
     "military": {
@@ -2112,7 +2240,7 @@ technologys=
             "alien-science-pack": 1
         },
         "icon": "graphics\/base\/graphics\/technology\/military.png",
-        "order": "e-a-d",
+        "order": "e-a-e",
         "time": 45,
         "count": 150,
         "category": "lab"
@@ -2129,7 +2257,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/module.png",
         "order": "i-a",
         "time": 30,
-        "count": 50,
+        "count": 100,
         "category": "lab"
     },
     "night-vision-equipment": {
@@ -2159,7 +2287,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/oil-gathering.png",
         "order": "d-a",
         "time": 30,
-        "count": 50,
+        "count": 100,
         "category": "lab"
     },
     "optics": {
@@ -2172,6 +2300,23 @@ technologys=
         "order": "a-h-a",
         "time": 15,
         "count": 10,
+        "category": "lab"
+    },
+    "personal-laser-defense-equipment": {
+        "upgrade": false,
+        "prerequisites": [
+            "armor-making-3",
+            "laser-turrets"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/personal-laser-defense-equipment.png",
+        "order": "g-m",
+        "time": 30,
+        "count": 100,
         "category": "lab"
     },
     "personal-roboport-equipment": {
@@ -2203,7 +2348,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/plastics.png",
         "order": "d-d",
         "time": 30,
-        "count": 100,
+        "count": 200,
         "category": "lab"
     },
     "power-armor": {
@@ -2323,7 +2468,7 @@ technologys=
         "count": 70,
         "category": "lab"
     },
-    "research-effectivity-1": {
+    "research-speed-1": {
         "upgrade": true,
         "prerequisites": [
             "electronics"
@@ -2332,54 +2477,54 @@ technologys=
             "science-pack-1": 1,
             "science-pack-2": 1
         },
-        "icon": "graphics\/base\/graphics\/technology\/research-effectivity.png",
+        "icon": "graphics\/base\/graphics\/technology\/research-speed.png",
         "order": "c-m-a",
         "time": 30,
         "count": 100,
         "category": "lab"
     },
-    "research-effectivity-2": {
+    "research-speed-2": {
         "upgrade": true,
         "prerequisites": [
-            "research-effectivity-1"
+            "research-speed-1"
         ],
         "ingredients": {
             "science-pack-1": 1,
             "science-pack-2": 1
         },
-        "icon": "graphics\/base\/graphics\/technology\/research-effectivity.png",
+        "icon": "graphics\/base\/graphics\/technology\/research-speed.png",
         "order": "c-m-b",
         "time": 30,
         "count": 150,
         "category": "lab"
     },
-    "research-effectivity-3": {
+    "research-speed-3": {
         "upgrade": true,
         "prerequisites": [
-            "research-effectivity-2"
+            "research-speed-2"
         ],
         "ingredients": {
             "science-pack-1": 1,
             "science-pack-2": 1,
             "science-pack-3": 1
         },
-        "icon": "graphics\/base\/graphics\/technology\/research-effectivity.png",
+        "icon": "graphics\/base\/graphics\/technology\/research-speed.png",
         "order": "c-m-c",
         "time": 30,
         "count": 250,
         "category": "lab"
     },
-    "research-effectivity-4": {
+    "research-speed-4": {
         "upgrade": true,
         "prerequisites": [
-            "research-effectivity-3"
+            "research-speed-3"
         ],
         "ingredients": {
             "science-pack-1": 1,
             "science-pack-2": 1,
             "science-pack-3": 1
         },
-        "icon": "graphics\/base\/graphics\/technology\/research-effectivity.png",
+        "icon": "graphics\/base\/graphics\/technology\/research-speed.png",
         "order": "c-m-d",
         "time": 30,
         "count": 500,
@@ -2399,7 +2544,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/robotics.png",
         "order": "c-i",
         "time": 30,
-        "count": 100,
+        "count": 150,
         "category": "lab"
     },
     "rocket-damage-1": {
@@ -2605,7 +2750,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/rocketry.png",
         "order": "e-g",
         "time": 15,
-        "count": 80,
+        "count": 120,
         "category": "lab"
     },
     "shotgun-shell-damage-1": {
@@ -2809,7 +2954,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/solar-energy.png",
         "order": "a-h-c",
         "time": 30,
-        "count": 100,
+        "count": 250,
         "category": "lab"
     },
     "solar-panel-equipment": {
@@ -2824,7 +2969,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/solar-panel-equipment.png",
         "order": "g-k",
         "time": 15,
-        "count": 50,
+        "count": 100,
         "category": "lab"
     },
     "speed-module": {
@@ -2884,7 +3029,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/steel-processing.png",
         "order": "c-a",
         "time": 5,
-        "count": 20,
+        "count": 50,
         "category": "lab"
     },
     "stone-walls": {
@@ -2911,7 +3056,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/sulfur-processing.png",
         "order": "d-c",
         "time": 30,
-        "count": 100,
+        "count": 150,
         "category": "lab"
     },
     "tanks": {
@@ -2928,7 +3073,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/tanks.png",
         "order": "e-c-c",
         "time": 20,
-        "count": 20,
+        "count": 40,
         "category": "lab"
     },
     "toolbelt": {
@@ -2941,7 +3086,7 @@ technologys=
         "icon": "graphics\/base\/graphics\/technology\/toolbelt.png",
         "order": "c-k-m",
         "time": 30,
-        "count": 50,
+        "count": 100,
         "category": "lab"
     },
     "turrets": {
@@ -2954,6 +3099,139 @@ technologys=
         "order": "a-j-a",
         "time": 10,
         "count": 10,
+        "category": "lab"
+    },
+    "worker-robots-speed-1": {
+        "upgrade": true,
+        "prerequisites": [
+            "logistic-robotics"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/worker-robots-speed.png",
+        "order": "c-k-f-a",
+        "time": 30,
+        "count": 50,
+        "category": "lab"
+    },
+    "worker-robots-speed-2": {
+        "upgrade": true,
+        "prerequisites": [
+            "worker-robots-speed-1"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/worker-robots-speed.png",
+        "order": "c-k-f-b",
+        "time": 30,
+        "count": 100,
+        "category": "lab"
+    },
+    "worker-robots-speed-3": {
+        "upgrade": true,
+        "prerequisites": [
+            "worker-robots-speed-2"
+        ],
+        "ingredients": {
+            "alien-science-pack": 1,
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/worker-robots-speed.png",
+        "order": "c-k-f-c",
+        "time": 60,
+        "count": 150,
+        "category": "lab"
+    },
+    "worker-robots-speed-4": {
+        "upgrade": true,
+        "prerequisites": [
+            "worker-robots-speed-3"
+        ],
+        "ingredients": {
+            "alien-science-pack": 1,
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/worker-robots-speed.png",
+        "order": "c-k-f-d",
+        "time": 60,
+        "count": 250,
+        "category": "lab"
+    },
+    "worker-robots-speed-5": {
+        "upgrade": true,
+        "prerequisites": [
+            "worker-robots-speed-4"
+        ],
+        "ingredients": {
+            "alien-science-pack": 1,
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/worker-robots-speed.png",
+        "order": "c-k-f-e",
+        "time": 60,
+        "count": 500,
+        "category": "lab"
+    },
+    "worker-robots-storage-1": {
+        "upgrade": true,
+        "prerequisites": [
+            "logistic-robotics"
+        ],
+        "ingredients": {
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/worker-robots-storage.png",
+        "order": "c-k-g-a",
+        "time": 30,
+        "count": 200,
+        "category": "lab"
+    },
+    "worker-robots-storage-2": {
+        "upgrade": true,
+        "prerequisites": [
+            "worker-robots-storage-1"
+        ],
+        "ingredients": {
+            "alien-science-pack": 1,
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/worker-robots-storage.png",
+        "order": "c-k-g-b",
+        "time": 60,
+        "count": 300,
+        "category": "lab"
+    },
+    "worker-robots-storage-3": {
+        "upgrade": true,
+        "prerequisites": [
+            "worker-robots-storage-2"
+        ],
+        "ingredients": {
+            "alien-science-pack": 1,
+            "science-pack-1": 1,
+            "science-pack-2": 1,
+            "science-pack-3": 1
+        },
+        "icon": "graphics\/base\/graphics\/technology\/worker-robots-storage.png",
+        "order": "c-k-g-c",
+        "time": 60,
+        "count": 450,
         "category": "lab"
     }
 }
